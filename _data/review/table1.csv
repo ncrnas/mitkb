@@ -1,0 +1,32 @@
+Tool,Pair<sup>a</sup>,Site<sup>b</sup>,Consv<sup>c</sup>,Access<sup>d</sup>,Multi<sup>e</sup>,Expr<sup>f</sup>,Refs
+left,center,center,center,center,center,center,left
+TargetScan,○,●,●,○,○,,Friedman2009 Grimson2007 Lewis2005
+PicTar,●,,○,●,●,,Chen2006 Grun2005 Krek2005 Lall2006
+miRanda,●,,○,●,○,,John2004 Betel2008
+MicroCosm Targets,●,,○,●,○,,Griffiths-Jones2008 Enright2003 Griffiths-Jones2006a
+RNAhybrid,●,,,●,,,Kruger2006 Rehmsmeier2004
+PITA,●,,●,●,○,,Kertesz2007
+STarMir,●,,,●,,,Long2007
+Rajewsky & Socci,●,,,●,,,Rajewsky2004
+Robins,●,,,●,○,,Robins2005
+mirWIP,●,,○,●,○,●,Hammell2008
+MicroInspector,●,,,●,,,Rusinov2005
+MicroTar,●,,,●,,,Thadani2006
+MirTarget2,○,●,●,●,,,Wang2008
+miTarget,●,,,●,,,Kim2006
+TargetMiner,●,,○,●,,●,Bandyopadhyay2009
+EIMMo,●,,○,,○,,Gaidatzis2007
+NbmiRTar,●,,○,●,,,Yousef2007
+TargetBoost,●,,,,,,Saetrom2005
+RNA22,●,,○,●,●,,Miranda2006
+TargetRank,○,,●,○,,,Nielsen2007
+EMBL,●,,○,●,○,,Stark2003 Stark2005 Brennecke2005
+MovingTarget,●,,○,●,○,,Burgler2005
+DIANA-microT,●,,○,●,,,Kiriakidou2004
+HOCTAR,●,,○,●,,●,Gennarino2009
+Stanhope,,,,,,●,Stanhope2009
+GenMiR++,○,,○,,,●,Huang2007
+HuMiTar,●,,,,,,Ruan2008
+MirTif,●,,,,,,Yang2008
+Yan et al.,●,,○,●,,,Yan2007
+Xie et al.,○,,○,,,,Xie2005

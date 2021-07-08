@@ -1,0 +1,16 @@
+Factor,Subgroup,Expr,Smpl
+3' UTR Length,Very Long,0,0
+,Long,1,0
+,Med Long,7,3
+,Med Short,6,3
+,Short,5,0
+3' UTR Cosv,High,5,3
+,Medium,3,1
+,Low,1,1
+,NoConsv,2,0
+mRNA Exp,Very High,6,6
+,High,7,5
+,Medium,5,4
+,Low,5,2
+,Very Low,0,0
+,NoExpr,0,0

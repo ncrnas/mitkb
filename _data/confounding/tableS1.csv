@@ -1,0 +1,11 @@
+Experiment,# of unique miRNAs,# of samples,Type *
+Baek MA,3,3,M
+Baek,3,3,P
+Lim,7,14,M
+Jackson,26,66,M
+Linsley,9,23,M
+Linsley OME,2,2,M_OME
+Grimson,9,18,M
+Selbach LNA,1,1,P_LNA
+Selbach MA,5,5,M
+Selbach,5,5,P

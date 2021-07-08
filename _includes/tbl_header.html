@@ -1,0 +1,16 @@
+<thead>
+{% assign cur_row = "1" %}
+<tr>
+{% for row in include.data %}
+  {% if row["row"] != cur_row %}
+    {% assign cur_row = row["row"] %}
+    </tr><tr>
+  {% endif %}
+  {% if row["attr"] %}
+    <th {{ row["attr"] }}>{{ row["val"] }}</th>
+  {% else %}
+    <th>{{ row["val"] }}</th>
+  {% endif %}
+{% endfor %}
+</tr>
+</thead>

@@ -1,0 +1,18 @@
+Rank,ROC,ROC diff<sup>a</sup>,Removed feature
+1,0.7565,0.0432,Distribution bins of discriminant values
+2,0.7904,0.0093,Number of GUM sites
+3,0.7971,0.0026,Site number flags (1 or 2-7 or >8)
+4,0.7978,0.0019,Total discriminant value / 3' UTR length
+5,0.7981,0.0016,Number of 7mer-m8 sites
+6,0.7984,0.0013,Site counts within optimal distance 17-25 nt
+7,0.7986,0.0011,Number of BT sites
+8,0.7994,0.0003,Number of 6mer sites
+9,0.7995,0.0002,Number of 7mer-A1 sites
+10,0.7996,0.0001,Total discriminant value
+11,0.7996,0.0001,3' UTR Length
+12,0.7996,0.0001,Number of GUT sites
+13,0.7997,0.0000,Number of BM sites
+14,0.7997,0.0000,Number of 8mer sites
+15,0.7999,-0.0002,Number of LP sites
+16,0.8003,-0.0006,Site counts within optimal distance 14-46 nt
+17,0.8009,-0.0012,Number of target sites

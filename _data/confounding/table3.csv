@@ -1,0 +1,12 @@
+Factor,Description,Values
+ln3,Target’s 3' UTR length,0~1
+cs3,Target’s overall 3' UTR conservation,0~1
+exp,Target’s mRNA expression level as measured by RNA-seq.,0~1
+#site_m,The number of miRNA or siRNA target sites in the target’s 3' UTR,0~1
+#endo_m,The number of target sites for endogenous miRNAs in the target’s 3' UTR,0~1
+#site_s,The total number of miRNA or siRNA target sites in all the potential target 3' UTRs,0~1
+p_ma,Binary variable stating whether the target’s fold change was measured by microarray or proteomics,1: Microarray
+,,0: Proteomics
+e_oe,Binary variable stating whether the target’s fold change was measured after miRNA transfection or inhibition,1: Transfection
+,,0: Inhibition
+ts_score,mRNA level TargetScan scores. Only used in the last regression model. ,0~1
