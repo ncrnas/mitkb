@@ -1,0 +1,10 @@
+Gene type,Feature,Greater,Less
+CpGH,3' UTR Length,3.85E-96*,1
+,3' UTR Consv,2.13E-206*,1
+,mRNA Exp,0*,1
+Development,3' UTR Length,8.46E-17*,1
+,3' UTR Consv,2.11E-51*,1
+,mRNA Exp,0.989438416,0.010561646*
+House-keeping,3' UTR Length,1,1.89E-20*
+,3' UTR Consv,0.469643425,0.530357925
+,mRNA Exp,1.57E-91*,1

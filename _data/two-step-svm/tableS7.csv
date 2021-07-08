@@ -1,0 +1,8 @@
+Parameter,Value,__SP1,__SP2,__SP3,__SP4
+Gap open (&#8209;gapopen),10.0,,,,
+Gap extend (&#8209;gapextend),7.0,,,,
+Scoring matrix (&#8209;datafile),,<strong>A</strong>,<strong>U</strong>,<strong>G</strong>,<strong>C</strong>
+,<strong>A</strong>,-3,5,-3,-3
+,<strong>U</strong>,5,-3,2,-3
+,<strong>G</strong>,-3,2,-3,5
+,<strong>C</strong>,-3,-3,5,-3

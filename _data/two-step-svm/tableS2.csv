@@ -1,0 +1,25 @@
+Rank,ROC,ROC diff<sup>a</sup>,Removed feature
+1,0.6734,0.0317,Seed Type
+2,0.6958,0.0093,"20nt site matches (Match:1, AU:0.4, None-match:0)"
+3,0.6998,0.0053,A:U rich context in the 30nt upstream
+4,0.7047,0.0004,PhastCons44wayMammal scores for the target site
+5,0.7047,0.0003,Similarity in the 3' portion (>10 nt)
+6,0.7048,0.0002,Relative site position (position / 3’UTR length)
+7,0.7049,0.0001,Similarity in the 5' portion (1-9 nt)
+8,0.7050,0.0000,Site accessibility: dGopen
+9,0.7050,0.0000,Distance to the next-nearest-neighbor site
+10,0.7050,0.0000,Site accessibility: dGduplex
+11,0.7050,0.0000,Site accessibility: ddG
+12,0.7050,0.0000,Site accessibility with 3/15 flank: dGopen
+13,0.7050,0.0000,Site accessibility with 3/15 flank: ddG
+14,0.7051,-0.0001,"Similarity in the 3' portion (position 13,14,15,16 )"
+15,0.7053,-0.0002,PhyloP44ways scores for the seed site
+16,0.7054,-0.0003,Similarity (1-20 nt)
+17,0.7054,-0.0004,multiz17way score for the seed site
+18,0.7056,-0.0006,"Pos 1 nucleotide of the target site (A:1, UCG:0)"
+19,0.7057,-0.0006,A:U rich context in the 30nt downstream
+20,0.7059,-0.0008,multiz17way score for the target site
+21,0.7060,-0.0009,PhastCons44wayPrimate scores for the target site
+22,0.7064,-0.0014,PhyloP44waysMammal scores for the seed site
+23,0.7068,-0.0017,PhastCons44way scores for the target site
+24,0.7081,-0.0030,PhyloP44waysPrimate scores for the seed site

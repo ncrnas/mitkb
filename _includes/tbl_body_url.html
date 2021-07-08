@@ -1,0 +1,17 @@
+<tbody>
+{% for row in include.data %}
+  <tr>
+  {% for pair in row %}
+    {% if pair[0] == include.attr.valid_col %}
+      {% continue %}
+    {% elsif pair[0] == include.attr.url_col %}
+      {% if row[include.attr.valid_col] == "T" %}
+        <td><a href="{{ pair[1] }}">{{ pair[1] }}</a></td>
+        {% continue %}
+      {% endif %}
+    {% endif %}
+    <td>{{ pair[1] }}</td>
+  {% endfor %}
+  </tr>
+{% endfor %}
+</tbody>

@@ -1,0 +1,18 @@
+,Feature,Vector size<sup>a</sup>,Incl<sup>b</sup>
+1,3'UTR Length,1,○
+2,Number of target sites,1,○
+3,Total discriminant value / 3’ UTR length,1,○
+4,Number of 8mer sites,1,○
+5,Number of 7mer-m8 sites,1,○
+6,Number of 7mer-A1 sites,1,○
+7,Number of 6mer sites,1,○
+8,Number of GUM sites,1,○
+9,Number of GUT sites,1,○
+10,Number of LP sites,1,○
+11,Number of BT sites,1,○
+12,Number of BM sites,1,○
+13,Distribution bins of discriminant values,16,○
+14,Site counts within optimal distance 14-46 nt,1,○
+15,Site counts within optimal distance 17-25 nt,1,○
+16,Site number flags (1 or 2-7 or >8),3,○
+17,Total discriminant value,1,○

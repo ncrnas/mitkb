@@ -1,0 +1,31 @@
+name,species,3,4,5,6,url,valid
+TargetScan,"23 vertebrates,f,w",Yes,Yes,Yes,Yes,http://www.targetscan.org,T
+PicTar,"v,m,f,w",Yes,No,No,No,https://pictar.mdc-berlin.de,T
+miRanda,"h,m,r",Yes,No,No,Yes,http://www.microrna.org,F
+MicroCosm Targets,44 species,Yes,No,No,No,http://www.ebi.ac.uk/enright-srv/microcosm/htdocs/targets/v5,F
+RNAhybrid,,No,No,No,Yes,https://bibiserv.techfak.uni-bielefeld.de/rnahybrid,T
+PITA,"h,m,f,w",Yes,Yes,Yes,Yes,https://genie.weizmann.ac.il/pubs/mir07,T
+STarMir,,Yes,Yes,Yes,No,http://sfold.wadsworth.org/starmir.pl,F
+Rajewsky & Socci,f,No,No,No,No,,F
+Robins,"f,w",No,No,No,No,,F
+mirWIP,w,Yes,No,No,Yes,http://146.189.76.171/query.php,F
+MicroInspector,,Yes,Yes,Yes,No,http://mirna.imbb.forth.gr/microinspector,F
+MicroTar,,No,No,No,Yes,http://tiger.dbs.nus.edu.sg/microtar,F
+MirTarget2,"h,m,r,d,c",Yes,No,No,No,http://mirdb.org,T
+miTarget,,Yes,Yes,Yes,No,http://cbit.snu.ac.kr/∼miTarget,F
+TargetMiner,h,Yes,No,No,No,http://www.isical.ac.in/∼bioinfo_miu,F
+EIMMo,"h,m,f,z",Yes,No,Yes,No,http://www.mirz.unibas.ch/ElMMo2,F
+NBmiRTar,,Yes,Yes,Yes,No,http://wotan.wistar.upenn.edu/NBmiRTar,F
+TargetBoost,w,Yes,Yes,No,No,https://demo1.interagon.com/targetboost,F
+RNA22,,Yes,Yes,Yes,No,http://cbcsrv.watson.ibm.com/rna22.html,F
+TargetRank,"h,m",Yes,No,No,No,http://hollywood.mit.edu/targetrank,T
+EMBL,f,Yes,No,No,No,http://www.russell.embl-heidelberg.de/miRNAs,F
+MovingTarget,f,No,No,No,No,,F
+DIANA-microT,,Yes,Yes,Yes,No,http://diana.pcbi.upenn.edu/cgi-bin/micro_t.cgi,F
+HOCTAR,h,Yes,No,No,No,http://hoctar.tigem.it,T
+Stanhope,h,No,No,No,No,,F
+GenMiR++,h,No,No,No,Yes,http://www.psi.toronto.edu/genmir/,F
+HuMiTar,h,No,No,No,No,,F
+MirTif,,Yes,Yes,Yes,No,http://bsal.ym.edu.tw/mirtif,F
+Yan et al.,h,No,No,No,No,,F
+Xie et al.,"h,m,r,d",No,No,No,No,,F

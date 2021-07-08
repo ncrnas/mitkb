@@ -1,0 +1,11 @@
+Experiment,Dev,NonDev
+Grimson,0.9961,0.003889*
+Linsley,0.9917,0.008313*
+Lim,0.966,0.03401*
+Jackson,0.9988,0.001185**
+Baek,0.05068,0.9494
+Selbach,0.09926,0.9008
+Baek MA,0.7844,0.2156
+Selbach MA,2.74E-05**,1
+Selbach LNA,0.4256,0.5751
+Linsley OME,0.8274,0.1726

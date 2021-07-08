@@ -1,0 +1,9 @@
+row,attr,val
+1,rowspan=2,Tool
+1,rowspan=2,Predicted species<sup>a</sup>
+1,colspan=3,Web access
+1,rowspan=2,SW<sup>d</sup>
+1,rowspan=2,URL
+2,,Online tool
+2,,Own miRNA<sup>b</sup>
+2,,Own mRNA<sup>c</sup>

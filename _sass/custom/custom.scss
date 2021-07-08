@@ -1,0 +1,7 @@
+.text-caption {
+  @include fs-2;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.1em;
+  color: $grey-dk-100;
+}

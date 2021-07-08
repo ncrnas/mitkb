@@ -1,0 +1,35 @@
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="{{site.baseurl}}/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="{{site.baseurl}}/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+<!-- for mathjax support -->
+{% if page.usemathjax %}
+  <script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      packages: ['base', 'ams']
+    },
+    loader: {
+      load: ['ui/menu', '[tex]/ams']
+    },
+    chtml: {
+      scale: 0.9
+    },
+    svg: {
+      scale: 0.9
+    }
+  };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+{% endif %}
+
+{% if page.no_back_to_top != true %}
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+{% endif %}
