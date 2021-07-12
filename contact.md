@@ -10,7 +10,7 @@ search_exclude: true
 Please use our contact form below if you have any questions, comments or feedback.
 
 <form class="mb-5"
-  action="https://formspree.io/f/mzbknqar"
+  action="https://formspree.io/f/xyyldkpg"
   method="POST"
 >
 
