@@ -1,0 +1,2738 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/mitkb/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/mitkb/assets/css/just-the-docs-default.css">
+
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-84ETYTKDBN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-84ETYTKDBN', { 'anonymize_ip': true });
+    </script>
+
+  
+
+  
+    <script type="text/javascript" src="/mitkb/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="/mitkb/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Research: Confounding | mitkb</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Research: Confounding" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="﻿Target gene expression levels and competition between transfected and endogenous microRNAs are strong confounding factors in microRNA high-throughput experiments" />
+<meta property="og:description" content="﻿Target gene expression levels and competition between transfected and endogenous microRNAs are strong confounding factors in microRNA high-throughput experiments" />
+<link rel="canonical" href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments/" />
+<meta property="og:url" content="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments/" />
+<meta property="og:site_name" content="mitkb" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Research: Confounding" />
+<script type="application/ld+json">
+{"description":"﻿Target gene expression levels and competition between transfected and endogenous microRNAs are strong confounding factors in microRNA high-throughput experiments","url":"https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments/","@type":"WebPage","headline":"Research: Confounding","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ncrnas.github.io/mitkb/assets/images/logo.png"}},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+<meta name="google-site-verification" content="vstkqjcoJe9vQcOOpsCKrxv6WfqZ2SKRNWSv7XoHFeQ" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/mitkb/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/mitkb/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/mitkb/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/mitkb/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/mitkb/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+<!-- for mathjax support -->
+
+
+
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
+
+<script
+  data-cookie-notice='{ "learnMoreLinkEnabled": true, "learnMoreLinkHref": "/mitkb/terms/" }'
+  src="https://unpkg.com/cookie-notice@^1/dist/cookie.notice.min.js"
+></script>
+
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://ncrnas.github.io/mitkb/" class="site-title lh-tight">
+  <div class="site-logo"></div>
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/" class="nav-list-link">Overview</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/0-front-matter/" class="nav-list-link">0 Front matter</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/1-introduction/" class="nav-list-link">1 Introduction</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/2-papers-and-their-corresponding-sub-goals/" class="nav-list-link">2 Papers and sub-goals</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/3-micrornas-and-other-non-coding-rnas/" class="nav-list-link">3 miRNAs and ncRNAs</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/4-high-throughput-biological-experiments/" class="nav-list-link">4 Biological experiments</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/5-statistical-tests-and-methods/" class="nav-list-link">5 Statistical methods</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/6-machine-learning-theory-and-support-vector-machine/" class="nav-list-link">6 Support vector machine</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/7-computational-implementation/" class="nav-list-link">7 Implementation</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/8-future-perspectives/" class="nav-list-link">8 Future perspectives</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/" class="nav-list-link">Target prediction</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/micrornas-targeting-and-target-prediction/" class="nav-list-link">Review: miRNA target</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/two-step-svm-model/" class="nav-list-link">Research: Two-step SVM</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/two-step-svm-model-supplementary-information/" class="nav-list-link">Supplementary information</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/" class="nav-list-link">Biological experiments</a><ul class="nav-list "><li class="nav-list-item  active"><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments/" class="nav-list-link active">Research: Confounding</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information/" class="nav-list-link">Supplementary information</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-and-other-ncrnas/" class="nav-list-link">Other ncRNAs</a><ul class="nav-list "></ul></li><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/support-articles/" class="nav-list-link">Support articles</a></li><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/contact" class="nav-list-link">Contact us</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      <a href="https://ncrnas.github.io/mitkb/terms">Terms and Privacy Policy</a> <br /><br />
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search mitkb" aria-label="Search mitkb" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      
+      
+      
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+            
+              <li class="aux-nav-list-item">
+                <a href="https://github.com/ncrnas/mitkb" class="site-button"
+                  
+                >
+                  mitkb on github
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/">Biological experiments</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>Research: Confounding</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h1 class="no_toc text-center" id="target-gene-expression-levels-and-competition-between-transfected-and-endogenous-micrornas-are-strong-confounding-factors-in-microrna-high-throughput-experiments">
+        
+        
+          <a href="#target-gene-expression-levels-and-competition-between-transfected-and-endogenous-micrornas-are-strong-confounding-factors-in-microrna-high-throughput-experiments" class="anchor-heading" aria-labelledby="target-gene-expression-levels-and-competition-between-transfected-and-endogenous-micrornas-are-strong-confounding-factors-in-microrna-high-throughput-experiments"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> ﻿Target gene expression levels and competition between transfected and endogenous microRNAs are strong confounding factors in microRNA high-throughput experiments
+        
+        
+      </h1>
+    
+
+<p class="text-center">Takay Saito<sup>1</sup> and Pål Sætrom<sup>1,2</sup></p>
+
+<p class="fs-3 text-center text-grey-dk-000"><strong><sup>1</sup></strong>Department of Cancer Research and Molecular Medicine,  <br />
+Norwegian University of Science and Technology, NO-7489 Trondheim, Norway <br />
+<strong><sup>2</sup></strong>Department of Computer and Information Science, <br />
+Norwegian University of Science and Technology, NO-7491 Trondheim, Norway</p>
+
+<p><br />
+<a href="https://link.springer.com/content/pdf/10.1186/1758-907X-3-3.pdf" class="btn">View PDF</a></p>
+<div class="code-example bg-grey-lt-000 p-3">
+<strong>Citation:</strong> <br />
+Saito, T and Sætrom, P. Target gene expression levels and competition between transfected and endogenous microRNAs are strong confounding factors in microRNA high-throughput experiments. <i>Silence</i> <strong>3,</strong> 3 (2012).
+<a href="https://doi.org/10.1186/1758-907X-3-3">https://doi.org/10.1186/1758-907X-3-3</a>.
+</div>
+
+<p><br /></p>
+
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#S:1" id="markdown-toc-S:1">Abstract</a></li>
+  <li><a href="#S:2" id="markdown-toc-S:2">Background</a></li>
+  <li><a href="#S:3" id="markdown-toc-S:3">Results and discussion</a>    <ol>
+      <li><a href="#S:3-1" id="markdown-toc-S:3-1">Target mRNA features: Ectopic miRNA expression differentially affects subgroups of genes with differing 3’ UTR length, 3’ UTR conservation, and mRNA expression level.</a></li>
+      <li><a href="#S:3-2" id="markdown-toc-S:3-2">Target mRNA features: Predicted target genes with short 3’ UTRs are more down-regulated than genes with long 3’ UTRs.</a></li>
+      <li><a href="#S:3-3" id="markdown-toc-S:3-3">Target mRNA features: Conservation in 3’ UTR regions has inconsistent regulatory effects.</a></li>
+      <li><a href="#S:3-4" id="markdown-toc-S:3-4">Target mRNA features: Predicted target genes with high mRNA expression levels are more down-regulated than the genes with low mRNA expression levels.</a></li>
+      <li><a href="#S:3-5" id="markdown-toc-S:3-5">Target mRNA features: Comparison tests on individual samples strongly support that the differences between subgroups are common for many miRNAs.</a></li>
+      <li><a href="#S:3-6" id="markdown-toc-S:3-6">Sample features: Competition with endogenous miRNAs impacts exogenous miRNAs’ targeting of genes with long 3’ UTRs.</a></li>
+      <li><a href="#S:3-7" id="markdown-toc-S:3-7">Sample features: PAR-CLIP data show that endogenous miRNAs target most mRNAs with long 3’ UTR.</a></li>
+      <li><a href="#S:3-8" id="markdown-toc-S:3-8">Sample features: Competition with endogenous miRNAs is not affected by evolutionary conservation levels of 3’ UTRs.</a></li>
+      <li><a href="#S:3-9" id="markdown-toc-S:3-9">Sample features: Competition with endogenous miRNAs has a strong impact on genes with medium or higher mRNA expression levels</a></li>
+      <li><a href="#S:3-10" id="markdown-toc-S:3-10">Sample features: Tests on individual samples support that the competition effect is strongest for genes with strong mRNA expression levels</a></li>
+      <li><a href="#S:3-11" id="markdown-toc-S:3-11">Platform features: Microarray datasets can have cryptic bias towards detecting differential expression in highly expressed genes.</a></li>
+      <li><a href="#S:3-12" id="markdown-toc-S:3-12">Platform and Sample features: Competition with endogenous miRNAs has a stronger impact on regulation than have dilution from high overall target expression.</a></li>
+      <li><a href="#S:3-13" id="markdown-toc-S:3-13">Regression analysis: Linear regression confirmed trends from individual feature analyses.</a></li>
+      <li><a href="#S:3-14" id="markdown-toc-S:3-14">Regression analysis: Factor crossing in the linear model confirmed that several factors have combined effects on miRNA down-regulation.</a></li>
+      <li><a href="#S:3-15" id="markdown-toc-S:3-15">Regression analysis: target site-dependent features, as modeled by TargetScan scores show strong interactions with site-independent features.</a></li>
+      <li><a href="#S:3-16" id="markdown-toc-S:3-16">CpG frequency, and Developmental and Housekeeping genes: Overall gene expression is a major confounding factor when analyzing microarray data.</a></li>
+    </ol>
+  </li>
+  <li><a href="#S:4" id="markdown-toc-S:4">Conclusions</a></li>
+  <li><a href="#S:5" id="markdown-toc-S:5">Methods</a>    <ol>
+      <li><a href="#S:5-1" id="markdown-toc-S:5-1">Data retrieval</a></li>
+      <li><a href="#S:5-2" id="markdown-toc-S:5-2">Data preparation</a></li>
+      <li><a href="#S:5-3" id="markdown-toc-S:5-3">Statistical analysis</a></li>
+    </ol>
+  </li>
+  <li><a href="#S:6" id="markdown-toc-S:6">Additional files</a></li>
+  <li><a href="#S:7" id="markdown-toc-S:7">Competing interests</a></li>
+  <li><a href="#S:8" id="markdown-toc-S:8">Authors’ contributions</a></li>
+  <li><a href="#S:9" id="markdown-toc-S:9">Acknowledgements</a></li>
+  <li><a href="#S:10" id="markdown-toc-S:10">References</a></li>
+</ol>
+
+</details>
+      <h2 id="S:1">
+        
+        
+          <a href="#S:1" class="anchor-heading" aria-labelledby="S:1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Abstract
+        
+        
+      </h2>
+    
+      <h3 class="no_toc" id="background">
+        
+        
+          <a href="#background" class="anchor-heading" aria-labelledby="background"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Background
+        
+        
+      </h3>
+    
+<p>MicroRNA (miRNA) target genes tend to have relatively long and conserved 3’ UTRs, but to what degree these characteristics contribute to miRNA targeting is poorly understood. Different high-throughput experiments have for example shown that miRNAs preferentially regulate genes with both short and long 3’ UTRs and that target site conservation is both important and irrelevant for miRNA targeting.</p>
+      <h3 class="no_toc" id="results">
+        
+        
+          <a href="#results" class="anchor-heading" aria-labelledby="results"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Results
+        
+        
+      </h3>
+    
+<p>We have analyzed several gene context-dependent features, including 3’ UTR length, 3’ UTR conservation, and mRNA expression levels, reported to have conflicting influence on miRNA regulation. By taking into account confounding factors such as technology-dependent experimental bias and competition between transfected and endogenous miRNAs, we show that two factors – target gene expression and competition – could explain most of the previously reported experimental differences. Moreover, we find that these and other target site-independent features explain about the same amount of variation in target gene expression as the target site-dependent features included in the TargetScan model.</p>
+      <h3 class="no_toc" id="conclusions">
+        
+        
+          <a href="#conclusions" class="anchor-heading" aria-labelledby="conclusions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conclusions
+        
+        
+      </h3>
+    
+<p>Our results show that it is important to consider confounding factors when interpreting miRNA high throughput experiments and urge especial caution when using microarray data to compare average regulatory effects between groups of genes that have different average gene expression levels.</p>
+      <h2 class="no_toc" id="keywords">
+        
+        
+          <a href="#keywords" class="anchor-heading" aria-labelledby="keywords"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Keywords
+        
+        
+      </h2>
+    
+<p>microRNA targets, siRNA, microarray, proteomics, PAR-CLIP</p>
+      <h2 id="S:2">
+        
+        
+          <a href="#S:2" class="anchor-heading" aria-labelledby="S:2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Background
+        
+        
+      </h2>
+    
+<p>MicroRNAs (miRNAs) are an abundant class of small non-coding RNAs (ncRNAs) that negatively regulate protein-coding genes <a class="citation" href="#Ambros2004">[1,2]</a>. MicroRNAs are involved in many important regulatory roles <a class="citation" href="#Hwang2007">[3,4,5]</a>, and current estimates indicate that miRNAs regulate at least 60% of the human protein-coding genes <a class="citation" href="#Friedman2009">[6]</a>.</p>
+
+<p>In animals, functional miRNA sites preferentially reside in 3’ UTRs <a class="citation" href="#Bartel2009">[7]</a>, and these sites are generally well conserved <a class="citation" href="#Friedman2009">[6]</a>. Moreover, some ubiquitously expressed genes, such as housekeeping genes, have shorter 3’ UTRs to potentially avoid miRNA regulation <a class="citation" href="#Bartel2004">[2,8]</a>, whereas proliferating cells express mRNAs with shortened 3’ UTRs to avoid miRNA regulation <a class="citation" href="#Sandberg2008">[9]</a>. Hence, miRNA target genes are likely to have relatively long and conserved 3’ UTRs. However, what degree the length and conservation of 3’ UTR contribute to miRNA targeting is still poorly understood. To illustrate, data from Argonaute immunoprecipitation (RIP) in human and fly indicate that miRNAs target short 3’ UTRs <a class="citation" href="#Hausser2009">[10,11]</a>, whereas microarray data from miRNA transfection experiments and sequence data from Argonaute cross-linked immunoprecipitation (CLIP) experiments indicate that miRNAs target long 3’ UTRs <a class="citation" href="#Wen2011">[12]</a>. Wen and colleagues also found that target site conservation was more important for CLIP-supported target sites than for targets that were down-regulated in the transfection experiments <a class="citation" href="#Wen2011">[12]</a>. Moreover, our previous study <a class="citation" href="#Saito2010">[13]</a> showed that genes with a 3’ UTR longer than 4000 nucleotides were less affected by ectopically expressed miRNAs than were genes with a shorter 3’ UTR, and that target site conservation had little or no effect on our miRNA target prediction algorithm’s performance.</p>
+
+<p>In addition to 3’ UTR length and conservation, several other gene characteristics also affect miRNA regulation. For example, many miRNAs are known to regulate genes involved in cell development processes <a class="citation" href="#Stefani2008">[4]</a>. Another example is that miRNAs appear to preferentially target genes with high CpG promoters <a class="citation" href="#Sinha2008">[14]</a>. Also, as highly expressed genes transcribe a large number of mRNAs, the miRNA regulation of those mRNAs can be different from those of weakly expressed genes, although current analyses disagree on whether miRNAs affect highly expressed genes more or less than medium or lowly expressed genes <a class="citation" href="#Hafner2010">[15,16]</a>.</p>
+
+<p>High throughput experiments based on microarrays or proteomics have been important for characterizing miRNA regulation <a class="citation" href="#Lim2005">[17,18,19,20]</a>. Although these and more recent comparative studies <a class="citation" href="#Hausser2009">[10,12]</a> found that some features such as seed complementarity and seed strength are consistently important for miRNA targeting, other features such as 3’ UTR length and site conservation mentioned above differ between studies and technologies. There are at least three potential features that may contribute to the difference between miRNA high-throughput experiments. First, the number of genes that cover a microarray experiment is usually much larger than that of a proteomics experiment. For instance, Baek et al. <a class="citation" href="#Baek2008">[19]</a> used both microarray and proteomics for their miRNA target gene analysis, and the number of genes detected for microarray and proteomics samples were about 20000 and 2000, respectively. Second, transfected (exogenous) miRNAs compete with endogenous miRNAs for the protein complex needed for miRNA regulation <a class="citation" href="#Khan2009">[21]</a>. Therefore, genes targeted by endogenous miRNAs but not by the exogenous miRNA can be up-regulated. Third, the effect of miRNA regulation can be diluted by target abundance, which means that each target gene is less down-regulated when the miRNA has many highly expressed compared with few lowly expressed target genes <a class="citation" href="#Arvey2010">[22]</a>. Common for these features is that they are target site-independent, but gene context-dependent.</p>
+
+<p>In this study, we have investigated the effects on miRNA targeting of several such target site-independent but gene context-dependent features. We categorized these features into three types: (i) target mRNA features, as 3’ UTR length, 3’ UTR sequence conservation, and mRNA expression level; (ii) sample features, as the competition and dilution effects; and (iii) platform features, as different types of technologies and experimental methods. We found that two features – the competition effect between endogenous miRNAs and transfected miRNAs, and mRNA expression level – have a strong impact on results from high throughput experiments. Both features are confounding factors that explain many of the previously reported differences between different studies and high throughput technologies. Considering these confounding factors is important to analyze accurately and robustly different types of miRNA high-throughput experiments and to infer correctly the characteristics of miRNA regulation.</p>
+      <h2 id="S:3">
+        
+        
+          <a href="#S:3" class="anchor-heading" aria-labelledby="S:3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Results and discussion
+        
+        
+      </h2>
+    
+      <h3 id="S:3-1">
+        
+        
+          <a href="#S:3-1" class="anchor-heading" aria-labelledby="S:3-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Target mRNA features: Ectopic miRNA expression differentially affects subgroups of genes with differing 3’ UTR length, 3’ UTR conservation, and mRNA expression level.
+        
+        
+      </h3>
+    
+
+<p>As we expected that mRNAs targeted by miRNA have long and conserved 3’ UTRs, we wanted to examine how these characteristics actually affect miRNA regulation. Specifically, we wondered whether there was a difference in how different gene groups, such as genes with long, medium, or short 3’ UTRs or genes with high, medium, or low 3’ UTR conservation, were affected by ectopic miRNA expression. To address this question, we used microarray and proteomics data from five and two miRNA transfection experiments, respectively, and microarray data from two miRNA inhibition experiments and analyzed the differences in gene expression log ratio values of predicted targets in the different gene groups (see <a href="#S:5-1">Methods</a>). We also included microarray data from a siRNA transfection experiment, as siRNAs behave as miRNAs in terms of target recognition <a class="citation" href="#Birmingham2006">[23,24]</a>. In contrast to evolutionary selected miRNA targets, however, targets for artificially designed exogenous siRNAs should be evolutionary unbiased. The siRNA dataset therefore served as an estimate of the general regulatory effects of over-expressing small RNAs. In total, we used 10 different types of miRNA high-throughput experiments, which covered 140 samples and 70 miRNAs and siRNAs (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S1">S1</a> and <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S2">S2</a>) in the Supplementary information).</p>
+
+<p>We first, for each miRNA and siRNA, separated predicted miRNA or siRNA target genes from the rest. The predicted target genes were genes that have at least one canonical seed site in their 3’ UTRs (see <a href="#S:5-2">Methods</a>). We used the set of predicted miRNA or siRNA target genes to analyze miRNA down-regulation effects on three different target mRNA features: (i) 3’ UTR length, (ii) 3’ UTR conservation, and (iii) mRNA expression level as determined by RNA-Seq counts. We split these three features into smaller sub-groups as described in the <a href="#S:5-2">Methods</a> section. We then used a one-sided Wilcoxon rank-sum test to determine whether the predicted target genes in one sub-group were significantly more down-regulated than the genes in the rest of the sub-groups (Fig. <a href="#F:1">1</a>). To illustrate, Fig. <a href="#F:1">1</a>A and <a href="#F:2">1</a>B show the cumulative density plots of the log-ratio values for the 3’ UTR length sub-groups on the Lim microarray and Selbach proteomics datasets. In the Lim dataset (Fig. <a href="#F:1">1</a>A), the sub-group Med Short, representing genes with 3’ UTRs in the range of 248-629 nts, was significantly left-shifted and therefore more down-regulated than the rest as indicated in the corresponding heatmap (Fig. <a href="#F:1">1</a>C; p-value 4.02e-17; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S3">S3</a> in the Supplementary information). In the Selbach proteomics dataset (Fig. <a href="#F:1">1</a>B), the Short sub-group was most shifted to the left compared to the others, but the differences were not as significant as in the Lim dataset – likely due to the smaller dataset (Fig. <a href="#F:1">1</a>C; p-value 0.02; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S3">S3</a> in the Supplementary information). Tables <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S3">S3</a>-<a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S5">S5</a> in the Supplementary Information summarize all p-values of one-sided Wilcoxon rank-sum test on 3’ UTR length, 3’ UTR conservation, and mRNA expression; Kolmogorov–Smirnov tests on the same sub-groups gave similar results (Tables <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S6">S6</a>-<a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S8">S8</a> in the Supplementary Information). The following sections describe and discuss the results for each target mRNA feature.</p>
+      <h4 id="F:1" class="no_toc">
+        
+        
+          <a href="#F:1" class="anchor-heading" aria-labelledby="F:1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/three-prime-length-conservation-expression.webp" alt="Figure 1" width="800" /></p>
+      <h5 class="no_toc text-caption" id="figure-1-heatmaps-show-effects-of-ectopic-mirna-regulation-for-sub-groups-of-3-utr-length-3-utr-conservation-and-mrna-expression-level">
+        
+        
+          <a href="#figure-1-heatmaps-show-effects-of-ectopic-mirna-regulation-for-sub-groups-of-3-utr-length-3-utr-conservation-and-mrna-expression-level" class="anchor-heading" aria-labelledby="figure-1-heatmaps-show-effects-of-ectopic-mirna-regulation-for-sub-groups-of-3-utr-length-3-utr-conservation-and-mrna-expression-level"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 1</strong>. Heatmaps show effects of ectopic miRNA regulation for sub-groups of 3’ UTR length, 3’ UTR conservation, and mRNA expression level.
+        
+        
+      </h5>
+    
+<p class="fs-2">Three heat maps show -log (base 2) transformed p-values for <strong>(C)</strong> 3’ UTR length, <strong>(D)</strong> 3’ UTR conservation, and <strong>(E)</strong> mRNA expression. We added two cumulative density plots for Lim <strong>(A)</strong> and Selbach <strong>(B)</strong> to illustrate the multiple non-parametric tests for the sub-groups of 3’ UTR lengths; “All” is the cumulative density for all the genes measured in the experiment and represents the reference distribution. “All” genes include both predicted miRNA target and non-target genes. Although the mRNA expression data <strong>(E)</strong> was cell type specific and for HeLa cells, we included the Linsley dataset (from HCT116 and DLD-1 colon tumor cells) in the heat map for comparison purpose (indicated with “*”). The color labels under the dendrogram represent green for microarray of transfection assay, gray for proteomics of transfection assay, and orange for both microarray and proteomics with inhibition assay.</p><hr />
+      <h3 id="S:3-2">
+        
+        
+          <a href="#S:3-2" class="anchor-heading" aria-labelledby="S:3-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Target mRNA features: Predicted target genes with short 3’ UTRs are more down-regulated than genes with long 3’ UTRs.
+        
+        
+      </h3>
+    
+<p>We have previously reported that genes with very long 3’ UTRs (&gt;4000 nts) are poor targets for ectopically expressed miRNAs or siRNAs <a class="citation" href="#Saito2010">[13]</a>. Consistent with this, there was no experiment that showed significant down-regulation for the Very Long sub-group (Fig. <a href="#F:1">1</a>C , Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S3">S3</a> in the Supplementary information). Interestingly, genes with short or medium 3’ UTRs (Short, Med Short, and Med Long) were significantly down-regulated compared to genes with long 3’ UTRs (Long and Very Long) among nearly all of the experiments. We saw the strongest effect for 3’ UTRs with sub-groups Med Short and Med Long, as one or both groups were significantly down-regulated compared to other predicted targets in 8 of 10 experiments (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S3">S3</a> in the Supplementary Information). Between these two sub-groups, Med Short had lower p-values than Med Long in 7 of 10 experiments. Using the one-sided Kolmogorov–Smirnov test as an alternative test method also supported the same trends (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S6">S6</a> in the Supplementary Information). These results indicate that miRNA or siRNA target genes with short 3’ UTRs were generally more down-regulated than genes with long 3’ UTRs.</p>
+      <h3 id="S:3-3">
+        
+        
+          <a href="#S:3-3" class="anchor-heading" aria-labelledby="S:3-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Target mRNA features: Conservation in 3’ UTR regions has inconsistent regulatory effects.
+        
+        
+      </h3>
+    
+<p>Although the sub-group of highly conserved 3’ UTR regions was strongly down-regulated in 5 of 10 experiments, the non-conserved sub-group was down-regulated in 2 of 10 experiments (Fig. <a href="#F:1">1</a>D, Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S4">S4</a> in the Supplementary Information). One possible explanation for this inconsistent pattern could be the conservation levels of the miRNAs used in the experiments. Since highly conserved miRNAs tend to have more target genes than less-conserved miRNA, highly conserved miRNAs may be more affected by the reported target dilution effect <a class="citation" href="#Arvey2010">[22]</a>. However, we found no significant correlations between the degree of miRNA conservation and the down-regulation effects (data not shown). Moreover, the siRNAs used in the Jackson experiment should be unaffected by 3’ UTR conservation, but these siRNAs strongly down-regulated highly conserved 3’ UTRs compared with other 3’ UTRs. We observed the same inconsistency for 3’ UTR conservation when testing with the one-sided Kolmogorov–Smirnov test (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S7">S7</a> in the Supplementary Information). Thus, although highly conserved 3’ UTRs in some cases can be better targets for ectopically expressed small RNAs, the inconsistent regulatory effects suggest that other factors are more important.</p>
+      <h3 id="S:3-4">
+        
+        
+          <a href="#S:3-4" class="anchor-heading" aria-labelledby="S:3-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Target mRNA features: Predicted target genes with high mRNA expression levels are more down-regulated than the genes with low mRNA expression levels.
+        
+        
+      </h3>
+    
+<p>A recent study showed that mRNA expression affects siRNA efficacy such that lowly expressed mRNAs are less affected by siRNAs than are highly expressed mRNAs <a class="citation" href="#Larsson2010">[16]</a>. Consistent with these results, siRNA and miRNA target genes with high or medium expression as measured by RNA-seq <a class="citation" href="#Birney2007">[25]</a> were significantly down-regulated compared to the rest of the sub-groups in the microarray experiments (Fig. <a href="#F:1">1</a>E). We saw a very strong down-regulatory effect on mRNA expression with sub-groups Very High, High, and Medium, as one or more sub-groups were significantly down-regulated compared to other predicted targets in 7 of 10 experiments (Table <a href="(/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S5)">S5</a> in the Supplementary Information). Moreover, there was no experiment that showed significant p-values for sub-groups Very Low and NoExp. One-sided Kolmogorov–Smirnov tests also gave similar results (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S8">S8</a> in the Supplementary Information). These results indicate that predicted miRNA or siRNA target genes with high or moderate expression levels are generally more down-regulated than genes with low expression levels.</p>
+      <h3 id="S:3-5">
+        
+        
+          <a href="#S:3-5" class="anchor-heading" aria-labelledby="S:3-5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Target mRNA features: Comparison tests on individual samples strongly support that the differences between subgroups are common for many miRNAs.
+        
+        
+      </h3>
+    
+<p>Our analyses so far showed clear differences in how ectopic miRNA and siRNA expression affected certain subgroups of genes. Since these differences were based on the average effects of multiple miRNAs, however, we could not exclude that these differences were due to a few miRNAs instead of being common effects for many miRNAs. To test this possibility, we repeated the tests of the three target mRNA features – 3’ UTR length, 3’ UTR conservation, and mRNA expression levels – individually on the 140 different samples (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S2">S2</a> in the Supplementary Information). We then calculated the proportions of samples that showed significant p-values (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S9">S9</a>-<a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S11">S11</a> in the Supplementary Information) and defined these proportions as Sample level scores (see <a href="#S:5-3">Methods</a>). Consequently, a subgroup with Sample level score = 0.5 would be significant in 70 (50%) of the individual experiments. To compare the trends of the test results between experiments and samples, we created two types of counts to represent the trends for both experiments and samples: (i) the number of experiments that had significant p-values from the test results of the experiments, and (ii) the number of experiments that had their Sample level scores greater than 0.5 (Table. <a href="#T:1">1</a>). The trends of mRNA expression level for experiments and samples were very similar for (Pearson <em>r</em> = 0.91; p-value = 0.01), whereas the trends of other two features showed high but insignificant correlation coefficients (3’ UTR length, <em>r</em> = 0.79, p-value = 0.11; 3’ UTR conservation, <em>r</em> = 0.81, p-value = 0.19). The results show that many individual samples support the overall trends for each experiment set – especially for the mRNA expression level features.</p><hr />
+      <h4 id="T:1" class="no_toc text-caption">
+        
+        
+          <a href="#T:1" class="anchor-heading" aria-labelledby="T:1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 1</strong>. Multiple compassion tests at an individual sample level support the experimental level test results.
+        
+        
+      </h4>
+    
+
+<div class="table-wrapper"><table>
+  
+    
+      
+      <thead> <tr>
+        
+          
+            <th>
+          
+          
+            Factor
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Subgroup
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Expr
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Smpl
+          
+            </th>
+        
+      </tr> </thead>
+      <tbody>
+      
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Length
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Very Long
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Long
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Med Long
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        7
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Med Short
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Short
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        5
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Cosv
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        High
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        5
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Medium
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Low
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        NoConsv
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        2
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        mRNA Exp
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Very High
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        High
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        7
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        5
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Medium
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        5
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        4
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Low
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        5
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        2
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Very Low
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        NoExpr
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0
+      
+        </td>
+    
+    </tr>
+  
+  </tbody>
+</table></div>
+
+<p class="fs-2"><strong>Exp</strong>: the number of experiments that have significant p-value. <strong>Smp</strong>: the number of experiments that have Sample level scores greater than 0.5.</p><hr />
+      <h3 id="S:3-6">
+        
+        
+          <a href="#S:3-6" class="anchor-heading" aria-labelledby="S:3-6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sample features: Competition with endogenous miRNAs impacts exogenous miRNAs’ targeting of genes with long 3’ UTRs.
+        
+        
+      </h3>
+    
+<p>Small RNA transfection perturbs endogenous miRNA regulation such that genes targeted by endogenous miRNAs can become up-regulated <a class="citation" href="#Khan2009">[21]</a>. We therefore hypothesized that genes with long 3’ UTRs had a net unaffected expression or reduced response because these genes potentially had more endogenous miRNA target sites than genes with short 3’ UTRs. To test this hypothesis, we separated the genes into four groups based on whether the genes were predicted to be targeted by the exogenous miRNAs and by highly expressed endogenous miRNAs. Both the first (T +Endo) and the second (T -Endo) groups consist of genes targeted by exogenous miRNAs, whereas the third (NT +Endo) and the fourth (NT -Endo) groups consist of genes without exogenous miRNA targets. The second word in the group names indicates that the group contains either genes targeted by endogenous miRNAs (+Endo) or genes without endogenous miRNA targets (-Endo) (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S12">S12</a> in the Supplementary Information; see <a href="#S:5-2">Methods</a>). Specifically, we used two of the four groups, T -Endo and T +Endo, for statistical analysis. We only used 8 transfected experiments and excluded 2 inhibition experiments because Selbach locked nucleic acid (LNA) and Linsley 2’-O-methyl (OME) experiments inhibited endogenous miRNAs.</p>
+
+<p>Consistent with our hypothesis, there were no T - Endo genes that belonged to the Very Long sub-group in any of the eight experiments (Fig. <a href="#F:2">2</a>A; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S13">S13</a> in the Supplementary Information). For the other sub-groups of 3’ UTR length, we tested whether T -Endo genes were more down-regulated than T +Endo genes (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S13">S13</a> in the Supplementary Information). Although the majority of experiments showed no significant differences for the subgroups, T -Endo genes were significantly more down-regulated than T +Endo genes for sub-group Long in three of eight experiments. Moreover, the only other significant difference was for the Med Long sub-group on the Selbach dataset, where T -Endo genes again were significantly more down-regulated than T +Endo genes. These results suggest that genes with a very long 3’ UTR are less affected by exogenous miRNAs than are other genes because these genes have a higher chance of being under the influence of endogenous miRNAs.</p>
+      <h4 id="F:2" class="no_toc">
+        
+        
+          <a href="#F:2" class="anchor-heading" aria-labelledby="F:2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/endogenous-vs-exogenous-microrna-features.webp" alt="Figure 2" width="500" /></p>
+      <h5 class="no_toc text-caption" id="figure-2-endogenous-mirnas-tend-to-target-genes-with-long-3-utrs-and-exogenous-mirnas-target-highly-expressed-genes-that-had-a-small-influence-of-endogenous-mirnas">
+        
+        
+          <a href="#figure-2-endogenous-mirnas-tend-to-target-genes-with-long-3-utrs-and-exogenous-mirnas-target-highly-expressed-genes-that-had-a-small-influence-of-endogenous-mirnas" class="anchor-heading" aria-labelledby="figure-2-endogenous-mirnas-tend-to-target-genes-with-long-3-utrs-and-exogenous-mirnas-target-highly-expressed-genes-that-had-a-small-influence-of-endogenous-mirnas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 2</strong>. Endogenous miRNAs tend to target genes with long 3’ UTRs and exogenous miRNAs target highly expressed genes that had a small influence of endogenous miRNAs.
+        
+        
+      </h5>
+    
+<p class="fs-2">Two cumulative density plots of the log-ratio values show the miRNA down-regulatory effects on sub-groups of <strong>(A)</strong> 3’ UTR length with the Grimson dataset, and <strong>(B)</strong> mRNA expression level with the Jackson dataset for ectopically expressed miRNA or siRNA target genes that were separated into T +Endo (T +E), T -Endo (T -E), NT +Endo (NT + E), and NT -Endo (NT -E).</p><hr />
+      <h3 id="S:3-7">
+        
+        
+          <a href="#S:3-7" class="anchor-heading" aria-labelledby="S:3-7"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sample features: PAR-CLIP data show that endogenous miRNAs target most mRNAs with long 3’ UTR.
+        
+        
+      </h3>
+    
+<p>To further test whether endogenous miRNAs target most mRNAs with very long 3’ UTR, we analyzed the data from an experiment that used Photoactivatable-Ribonucleoside-Enhanced Crosslinking and Immunoprecipitation (PAR-CLIP) of the four human Argonautes (AGO1-4, also known as EIF2C1-4) to identify miRNA binding sites <a class="citation" href="#Hafner2010">[15]</a>. We mapped PAR-CLIP-supported AGO binding sites in 3’ UTR regions and for each of the five different sub-groups defined by 3’ UTR length, we counted the number of genes with binding sites (Table. <a href="#T:2">2</a>). We found more AGO binding sites in long 3’ UTR genes (Very Long and Long) than in short 3’ UTR genes (Med Long, Med Short, and Short) when compared with all available RefSeq genes (p-values &lt; 2.2e-16, Fisher’s exact test for all four AGOs). Specifically, of the five subgroups, the genes with very long 3’ UTRs (Very Long) had the highest fraction of genes with AGO binding sites and this fraction decreased with decreasing 3’ UTR length (Table <a href="#T:2">2</a>). These results support that endogenous miRNAs preferentially target mRNAs with very long 3’ UTR.</p><hr />
+      <h4 id="T:2" class="no_toc text-caption">
+        
+        
+          <a href="#T:2" class="anchor-heading" aria-labelledby="T:2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 2</strong>. PAR-CLIP data show that endogenous miRNA tend to target mRNAs with long 3’ UTR.
+        
+        
+      </h4>
+    
+
+<div class="table-wrapper"><table>
+  
+    
+      
+      <thead> <tr>
+        
+          
+            <th>
+          
+          
+            
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Very Long
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Long
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Med Long
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Med Short
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Short
+          
+            </th>
+        
+      </tr> </thead>
+      <tbody>
+      
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        AllRef
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        917
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6194
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6201
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6198
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        6201
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        AGO1
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        787 (85.82 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3757 (60.66 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        2371 (38.24 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1123 (18.12 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        471 (7.60 %)
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        AGO2
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        320 (34.90 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1010 (16.31 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        428 (6.90 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        148 (2.39 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        64 (1.03 %)
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        AGO3
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        883 (96.29 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        4800 (77.49 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3332 (53.73 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1804 (29.11 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        639 (10.30 %)
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        AGO4
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        713 (77.75 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3087 (49.84 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1510 (24.35 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        639 (10.31 %)
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        167 (2.69 %)
+      
+        </td>
+    
+    </tr>
+  
+  </tbody>
+</table></div>
+
+<p class="fs-2">The table shows the total number of genes (AllRef) and the number of Argonaute-bound 3’ UTRs (AGO1-4) for each sub-group defined by 3’ UTR length (see Methods). Values in brackets indicate the percentage of all genes in the sub-group that have AGO binding sites.</p><hr />
+      <h3 id="S:3-8">
+        
+        
+          <a href="#S:3-8" class="anchor-heading" aria-labelledby="S:3-8"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sample features: Competition with endogenous miRNAs is not affected by evolutionary conservation levels of 3’ UTRs.
+        
+        
+      </h3>
+    
+<p>The test results of mRNA target features showed no consistent evidence that genes in any sub-group of 3’ UTR conservation were significantly more down-regulated than were the genes in the rest of the sub-groups (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S4">S4</a> in the Supplementary Information). We therefore did not expect to find consistent patterns of interaction between the competition effect and 3’ UTR conservation. Indeed, when we tested whether T -Endo genes were more down-regulated than T +Endo genes in the sub-groups of 3’ UTR conservation, the test showed no consistent trends across sub-groups; rather, the tests indicated consistent differences between experiments, as all sub-groups were significant on the Lim, Jackson, and Selbach datasets (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S14">S14</a> in the Supplementary Information). These results suggest that competition between endogenous and exogenous miRNAs is unaffected by the levels of evolutionary conservation on 3’ UTRs.</p>
+      <h3 id="S:3-9">
+        
+        
+          <a href="#S:3-9" class="anchor-heading" aria-labelledby="S:3-9"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sample features: Competition with endogenous miRNAs has a strong impact on genes with medium or higher mRNA expression levels
+        
+        
+      </h3>
+    
+<p>As endogenous miRNA regulation mostly reduces target mRNA expression <a class="citation" href="#Stark2005">[8,26,27]</a>, miRNA target genes with low mRNA expression levels would more likely be under strong regulation by endogenous miRNAs. Similarly, miRNA target genes with high mRNA expression would less likely be under strong endogenous miRNA regulation. Consequently, we expected lowly expressed mRNAs to be less affected by competition with exogenous miRNAs than were highly expressed mRNAs. Indeed, T -Endo genes were significantly more down-regulated than were T +Endo genes for high or moderate mRNA expression levels (Very High, High, and Medium; Fig. <a href="#F:2">2</a>B; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S15">S15</a> in the Supplementary Information). Moreover, no experiments showed significant down-regulation for low or no mRNA expression levels (Very Low and NoExp). As, according to our results, endogenous miRNAs preferentially target genes with long 3’ UTRs, taken together, these results support that the genes with a very long 3’ UTR are less affected by exogenous miRNAs because most of them are under the influence of endogenous miRNAs.</p>
+      <h3 id="S:3-10">
+        
+        
+          <a href="#S:3-10" class="anchor-heading" aria-labelledby="S:3-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sample features: Tests on individual samples support that the competition effect is strongest for genes with strong mRNA expression levels
+        
+        
+      </h3>
+    
+<p>To further analyze the trends of competition effects on 3’ UTR length, 3’ UTR conservation, and mRNA expression level, we tested the difference of miRNA down-regulation between T -Endo and T +Endo genes on the 140 individual samples instead of the collective experiments. To compare the trends of the test results between experiments and samples, we again created two types of counts: (i) the number of experiments that had significant p-values from the test results of the experiments, and (ii) the number of experiments that had their Sample level scores greater than either 0.5 or 0 (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S16">S16</a> in the Supplementary Information). With a strict threshold of Sample level scores (&gt;0.5), the tests on samples showed no strong support for the trend observed when tested on the experiments. With a less strict threshold of Sample level scores (&gt;0), the tests on samples supported the trend for mRNA expression level (Pearson <em>r</em> = 0.86; p-value = 0.03), whereas the 3’ UTR length showed some but insignificant support of the experiment-level results (<em>r</em> = 0.47; p-value = 0.42). The 3’ UTR conservation showed no correlation with the experiment-level results (<em>r</em> = -0.10; p-value = 0.9). Together, the results indicated that some samples support the result from the collective experiments that the competition effect more strongly affects genes with high compared with low mRNA expression level.</p>
+      <h3 id="S:3-11">
+        
+        
+          <a href="#S:3-11" class="anchor-heading" aria-labelledby="S:3-11"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Platform features: Microarray datasets can have cryptic bias towards detecting differential expression in highly expressed genes.
+        
+        
+      </h3>
+    
+<p>A recent study showed that mRNA expression affects siRNA efficacy such that lowly expressed mRNAs are less affected by siRNAs than are highly expressed mRNAs <a class="citation" href="#Larsson2010">[16]</a>. Consistent with these results, siRNA and miRNA target genes with high or medium expression, as measured by RNA-seq <a class="citation" href="#Birney2007">[25]</a>, were significantly down-regulated compared to the rest of the sub-groups in the microarray experiments (Fig. <a href="#F:1">1</a>E). However, these trends were not apparent in the proteomics datasets, which instead showed significant effects on the lowly expressed genes (two of three experiments; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S5">S5</a> in the Supplementary Information).</p>
+
+<p>The cumulative density plots of log-ratio values for the Grimson microarray and Selbach proteomics datasets illustrate the differences (Fig. <a href="#F:3">3</a>A, B). The three sub-groups of very high, high, and medium expression were left-shifted and therefore more strongly down-regulated relative to the other groups in the Grimson microarray dataset (Fig. <a href="#F:3">3</a>A). Indeed, the groups’ expression level appeared to strictly determine the degree of down-regulation, as the very highly expressed genes were more left-shifted compared to the highly expressed genes and so on. In contrast, the Selbach proteomics datasets showed no such trends (Fig. <a href="#F:3">3</a>B); the three sub-groups with the highest expression levels were similarly affected, whereas the lowly expressed genes were slightly more down-regulated than the other groups.</p>
+      <h4 id="F:3" class="no_toc">
+        
+        
+          <a href="#F:3" class="anchor-heading" aria-labelledby="F:3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/mirna-target-features-microarray-vs-proteomics.webp" alt="Figure 3" width="800" /></p>
+      <h5 class="no_toc text-caption" id="figure-3-microarrays-but-not-proteomics-are-biased-towards-detecting-differential-expression-among-highly-expressed-genes">
+        
+        
+          <a href="#figure-3-microarrays-but-not-proteomics-are-biased-towards-detecting-differential-expression-among-highly-expressed-genes" class="anchor-heading" aria-labelledby="figure-3-microarrays-but-not-proteomics-are-biased-towards-detecting-differential-expression-among-highly-expressed-genes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 3</strong>. Microarrays but not proteomics are biased towards detecting differential expression among highly expressed genes.
+        
+        
+      </h5>
+    
+<p class="fs-2">Cumulative density plots of log-ratio values for miRNA targets grouped by gene expression levels in <strong>(A)</strong> the Grimson and <strong>(B)</strong> the Selbach datasets. <strong>(C)</strong> Barplots show the ratio of the six sub-groups of mRNA expression levels subdivided by predicted exogenous and endogenous miRNA targeting in the Grimson and Selbach datasets for all genes (“All”) and down-regulated genes (“Down-reg”, p &lt; 0.01; log ratio (lr) &lt; -0.01). <strong>(D)</strong> Scatter plots show log2 enrichment of down-regulated genes compared with all genes for the six sub-groups of mRNA expression levels in all studied datasets. Lines and shaded grays show respectively linear fits and standard errors for the microarray (red dots) and proteomics (blue triangles) experiments; p-values (lower left) are unadjusted p-values from Pearson correlation tests. Data points based on a single gene were excluded. The regression lines show that in the microarray but not the proteomics experiments, down-regulated genes are enriched among highly expressed genes and that this enrichment depends on gene expression levels.</p><hr />
+
+<p>As the proteomics experiments relied on detecting and identifying individual proteins, whereas microarrays use hybridization signals to infer gene expression, we reasoned that the differences might be explained by differences in the two methods’ sensitivity to detect highly and lowly expressed genes or to detect expression changes for highly and lowly expressed genes. Whereas the microarray signals were evenly distributed among all subgroups of gene expression levels, the proteomics data showed bias towards highly expressed genes and detected few very lowly expressed genes (Fig. <a href="#F:3">3</a>C). These trends were apparent in the other microarray and proteomics datasets as well (Fig. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S1">S1</a> in the Supplementary information). When considering expression changes, however, the proteomics data showed little bias and detected down-regulated genes independently of their expression level (Fig. <a href="#F:3">3</a>D). The microarray data, in contrast, showed strong expression-related bias, such that down-regulated genes were enriched among the highly expressed genes and depleted among the lowly expressed genes.</p>
+
+<p>Importantly, these results were independent of miRNA targeting, as subdividing the genes into four groups based on whether the genes contained predicted target sites for the exogenous miRNAs and highly expressed endogenous miRNAs gave similar results (Figs. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S2">S2</a> in the Supplementary information). This grouping further illustrated the effects of miRNA targeting, however. Specifically, consistent with miRNAs inhibiting mRNA expression, the most highly expressed genes constituted a smaller percentage of the genes predicted to be targets for endogenous miRNA (T +Endo and NT +Endo, Fig. <a href="#F:3">3</a>C) than of the genes predicted not to be targets (T -Endo and NT -Endo; Fig. <a href="#F:3">3</a>C).</p>
+
+<p>In summary, the exogenous miRNAs’ apparent strong effects on highly expressed genes within the microarray data can be explained by technology-related artefacts. Specifically, our results show that although microarrays detect lowly expressed genes, arrays have lower sensitivity for identifying differential expression for such genes than for highly expressed genes. This is consistent with previous results <a class="citation" href="#Evans2003">[28]</a>. Proteomics data, in contrast, are biased towards highly expressed genes, but detect differential expression independently of gene expression levels. In other words, proteomics fails to detect many genes with low expression level but the sensitivity in detecting differentially expressed genes is similar among different expression levels, whereas microarrays can detect genes with low expression level but the sensitivity in detecting differential expression is low for these genes compared with highly expressed genes. Because of these differences, microarray but not proteomics data will show that miRNAs on average have a stronger effect on highly than on lowly expressed genes.</p>
+      <h3 id="S:3-12">
+        
+        
+          <a href="#S:3-12" class="anchor-heading" aria-labelledby="S:3-12"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Platform and Sample features: Competition with endogenous miRNAs has a stronger impact on regulation than have dilution from high overall target expression.
+        
+        
+      </h3>
+    
+<p>A recent study has reported that when over-expressing miRNAs, a high overall expression level of predicted targets reduces the miRNA’s average regulatory effect – the so-called target dilution effect <a class="citation" href="#Arvey2010">[22]</a>. Arvey and colleagues mainly used the total mRNA expression level to test the dilution effect, but they also suggested that other approaches were almost equally effective, such as the total number of target sites <a class="citation" href="#Arvey2010">[22]</a>. To test the dilution effect on the samples, we therefore used the number of target sites instead of total mRNA expression levels, as these values were very highly correlated (<em>r</em> = 0.973; Fig. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S3">S3</a> in the Supplementary information) and also because mRNA expression data were unavailable for the HCT116 and DLD-1 cell-lines used in the Linsley experiment. Our results confirmed a significant correlation between the total number of target sites and the average log ratio of predicted miRNA targets (<em>r</em> = 0.369; p-value &lt; 0.001; Fig. <a href="#F:4">4</a>A).</p>
+      <h4 id="F:4" class="no_toc">
+        
+        
+          <a href="#F:4" class="anchor-heading" aria-labelledby="F:4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/mirna-target-dilution-effect-log-ratio.webp" alt="Figure 4" width="500" /></p>
+      <h5 class="no_toc text-caption" id="figure-4-genes-without-target-sites-for-endogenous-mirnas-show-less-dilution-effects-than-does-the-complete-set-of-potential-targets">
+        
+        
+          <a href="#figure-4-genes-without-target-sites-for-endogenous-mirnas-show-less-dilution-effects-than-does-the-complete-set-of-potential-targets" class="anchor-heading" aria-labelledby="figure-4-genes-without-target-sites-for-endogenous-mirnas-show-less-dilution-effects-than-does-the-complete-set-of-potential-targets"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 4</strong>. Genes without target sites for endogenous miRNAs show less dilution effects than does the complete set of potential targets.
+        
+        
+      </h5>
+    
+<p class="fs-2"><strong>(A)</strong> The scatter plot shows the average log ratios for predicted miRNA and siRNA targets as measured by microarrays of 90 over-expression experiments (55 miRNAs and 35 siRNAs) as a function of the miRNAs’ and siRNAs’ total number of target sites. The line is based on a linear regression and indicates that there is a significant correlation between the total number of target sites and average log ratio (<em>r</em> = 0.37; p &lt; 0.001). <strong>(B)</strong> The scatter plot shows the average log ratios for the subset of genes that have no predicted target sites for endogenous miRNAs as a function of the miRNAs’ and siRNAs’ total number of target sites (<em>r</em> = 0.22; p = 0.068). Only the 70 samples assayed in HeLa were included. In both plots, red circles represent miRNAs, and blue triangles represent siRNAs.</p><hr />
+
+<p>Targeting by endogenous miRNAs influences both the genes’ expression levels before transfection (Fig. <a href="#F:3">3</a>D) and response to exogenous miRNAs after transfection (Fig. <a href="#F:2">2</a>). We therefore reasoned that part of the observed correlation could be related to interactions between endogenous miRNAs and the exogenous, ectopically expressed miRNA because some exogenous miRNA target genes also targeted by endogenous miRNAs were potentially up-regulated because of the competition effects. Such interactions could further be compounded by microarrays’ bias towards detecting differential expression among highly expressed genes (Fig. <a href="#F:3">3</a>E). Arvey and colleagues based their conclusions on microarray data and they also reported that for most transfected miRNAs or siRNAs (15 of 181 tested; p-value = 2e-33, sign test), highly expressed genes are more down-regulated than are lowly expressed genes <a class="citation" href="#Arvey2010">[22]</a>. To eliminate such interactions between the endogenous and exogenous miRNAs, we calculated the correlation between the total number of miRNA sites and the average log ratio of the genes that were predicted only to be targets for the exogenous miRNAs. The correlation was not significant (<em>r</em> = 0.22; p-value = 0.067; Fig. <a href="#F:4">4</a>B), indicating that when considering the average effects of exogenous, ectopically expressed miRNAs, endogenous miRNA regulation (competition <a class="citation" href="#Khan2009">[21]</a>) is more important than overall target expression levels (dilution).</p>
+      <h3 id="S:3-13">
+        
+        
+          <a href="#S:3-13" class="anchor-heading" aria-labelledby="S:3-13"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Regression analysis: Linear regression confirmed trends from individual feature analyses.
+        
+        
+      </h3>
+    
+<p>To further investigate how the different features collectively contributed to log ratio changes of gene expression, we built a linear regression model with eight factors per mRNA target. These eight factors represented our previous target, sample, and platform level features (Table <a href="#T:3">3</a>). To create the model, we first calculated the eight factors for all predicted miRNA or siRNA target genes and transformed the factors’ value range to [0, 1], to make regression coefficient values easily comparable. Second, we negated all log-ratio values for the transfection experiments so that a positive coefficient meant that a high value for the factor contributed positively to gene down-regulation. Third, we built a linear regression model with the eight factors on the set of predicted miRNA and siRNA target genes from the 10 experiments (R<sup>2</sup> = 0.040; R<sup>2</sup> = 0.040, when adjusted by the number of records and the number of terms).</p><hr />
+      <h4 id="T:3" class="no_toc text-caption">
+        
+        
+          <a href="#T:3" class="anchor-heading" aria-labelledby="T:3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 3</strong>. Nine factors for linear regression.
+        
+        
+      </h4>
+    
+
+<div class="table-wrapper"><table>
+  
+    
+      
+      <thead> <tr>
+        
+          
+            <th>
+          
+          
+            Factor
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Description
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Values
+          
+            </th>
+        
+      </tr> </thead>
+      <tbody>
+      
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        ln3
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Target’s 3' UTR length
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        cs3
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Target’s overall 3' UTR conservation
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        exp
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Target’s mRNA expression level as measured by RNA-seq.
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        #site_m
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        The number of miRNA or siRNA target sites in the target’s 3' UTR
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        #endo_m
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        The number of target sites for endogenous miRNAs in the target’s 3' UTR
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        #site_s
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        The total number of miRNA or siRNA target sites in all the potential target 3' UTRs
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        p_ma
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Binary variable stating whether the target’s fold change was measured by microarray or proteomics
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1: Microarray
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0: Proteomics
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        e_oe
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        Binary variable stating whether the target’s fold change was measured after miRNA transfection or inhibition
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1: Transfection
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0: Inhibition
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        ts_score
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        mRNA level TargetScan scores. Only used in the last regression model. 
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0~1
+      
+        </td>
+    
+    </tr>
+  
+  </tbody>
+</table></div>
+
+<p class="fs-2">All values are either in a range between 0 and 1 (0~1) or binary (0 or 1).</p><hr />
+
+<p>The model showed that seven of the factors significantly contributed to log ratio changes, although to different extents (Fig. <a href="#F:5">5</a>; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S17">S17</a> in the Supplementary information). Consistent with published results that multiple miRNA target sites enhance miRNA down-regulation <a class="citation" href="#Guo2010">[27]</a>, the number of target sites (#site_m) was the strongest factor, and consistent with our non-parametric tests, mRNA expression (exp) had the second largest coefficient. Furthermore, 3’ UTR length (ln3), the number of target sites for endogenous miRNAs (#endo_m), and the total number of target sites per sample (#site_s) had strong negative coefficients, whereas transfection compared with inhibition experiments (e_oe) had, as expected, a positive coefficient. Partly contrary to the non-parametric analyses, however, 3’ UTR conservation (cs3) was consistently and strongly associated with target knock-down, but this result likely reflects that highly conserved 3’ UTRs were strongly associated with target knock-down in four of the ten experiments (Fig. <a href="#F:1">1</a>).</p>
+      <h4 id="F:5" class="no_toc">
+        
+        
+          <a href="#F:5" class="anchor-heading" aria-labelledby="F:5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/linear-regression-mirna-target-8-features.webp" alt="Figure 5" width="500" /></p>
+      <h5 class="no_toc text-caption" id="figure-5-coefficients-of-a-linear-regression-with-eight-factors">
+        
+        
+          <a href="#figure-5-coefficients-of-a-linear-regression-with-eight-factors" class="anchor-heading" aria-labelledby="figure-5-coefficients-of-a-linear-regression-with-eight-factors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 5</strong>. Coefficients of a linear regression with eight factors.
+        
+        
+      </h5>
+    
+<p class="fs-2">The dot plot shows the coefficients of the liner model with formula: -log ratio = ln3 + cs3 + exp +#site_m + #endo_m + #site_s + p_ma + e_oe. The dot size shows -log10 of the coefficient’s p-value. Positive coefficients associate with miRNA down-regulation.</p><hr />
+      <h3 id="S:3-14">
+        
+        
+          <a href="#S:3-14" class="anchor-heading" aria-labelledby="S:3-14"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Regression analysis: Factor crossing in the linear model confirmed that several factors have combined effects on miRNA down-regulation.
+        
+        
+      </h3>
+    
+<p>Based on our analyses of the individual target, sample, and experiment features, we expected that some factor pairs such as exp and p_ma, #site_m and #endo_m, and cs3 and e_oe had strong combined effects. To investigate this possibility, we extended our simple linear model to include all second-order interactions, such as ln3 * cs3, ln3 * exp, and so on. This extension slightly increased the R<sup>2</sup> of the model (R<sup>2</sup> = 0.047; adjusted R<sup>2</sup> = 0.046).
+Although directly comparing coefficients was less straightforward than for the simpler model without factor interactions because of different range distributions for combined factors, there were still several factors that had significantly higher or lower coefficients than the others (Fig. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S4">S4</a> and Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S18">S18</a> in the Supplementary information). The number of target sites for the ectopically expressed miRNA or siRNA (#site_m) had the highest coefficient, whereas the interaction between #site_m and the number of target sites for endogenous miRNAs (#endo_m) had the lowest and most significant coefficient. Consistent with the number of target sites’ importance for regulation, most factor combinations that included #site_m were significant. These results confirm that the number of target sites (#site_m) is the most important factor to explain log ratio changes, but that several other interacting factors and especially competition with endogenous miRNAs (#endo_m) influence the resulting target knock-down.
+Of the other factors, target expression (exp) was still among the most significant single factor. Moreover, consistent with our previous results, the coefficients for exp’s interaction with the two experiment factors (p_ma and e_oe) were strong, significant, and positive. In contrast, exp by itself or interacting with 3’ UTR length (ln3) had a significant negative coefficient. Consequently, our results suggest that when experiment-related features are factored out, miRNAs do more strongly affect lowly than highly expressed genes.</p>
+
+<p>As for the remaining features, both ln3 and cs3 showed significant interactions with expected features. Especially cs3 showed strong and significant interactions with many factors (all except ln3, exp, and p_ma), which likely explains the conflicting results for 3’ UTR conservation in the individual feature analyses.</p>
+      <h3 id="S:3-15">
+        
+        
+          <a href="#S:3-15" class="anchor-heading" aria-labelledby="S:3-15"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Regression analysis: target site-dependent features, as modeled by TargetScan scores show strong interactions with site-independent features.
+        
+        
+      </h3>
+    
+<p>So far, our regression models and analyses considered all stringent seed sites as equally important target sites (see <a href="#S:5-2">Methods</a>), but different features of individual target sites, such as the seed type, the site’s AU context, the site’s location in 3’ UTR, and additional pairing between the miRNA 3’ end and mRNA, do affect miRNA targeting <a class="citation" href="#Grimson2007">[18]</a>. We therefore extended our regression model to include TargetScan <a class="citation" href="#Grimson2007">[18]</a> scores (see <a href="#S:5-2">Methods</a>) to determine how the predicted effects of individual miRNA target sites affect and interact with the mRNA, sample, and platform level features in our model.</p>
+
+<p>A simple regression model with only TargetScan scores had R<sup>2</sup> = 0.043, which was very similar to the previous models with eight factors (R<sup>2</sup> = 0.040 and R<sup>2</sup> = 0.046 for the simple and combined effects models, respectively). In contrast, a simple regression model that included all the nine factors showed increased R<sup>2</sup> (R<sup>2</sup> = 0.071; adjusted R<sup>2</sup> = 0.071). The most significant single factor in this model was TargetScan score (ts_score; Fig. <a href="#F:6">6</a>; Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S19">S19</a> in the Supplementary information). Most factors showed very similar trends compared with the previous model with eight factors (Fig. <a href="#F:5">5</a>), except for the number of target sites for the ectopically expressed miRNA or siRNA (#site_m) which showed decreased importance. This decrease can be explained, however, by TargetScan modeling total mRNA regulation as the sum of the scores for individual target sites; TargetScan scores (ts_score) and the number of target sites for the ectopically expressed miRNA or siRNA (#site_m) are strongly correlated (<em>r</em> = 0.42; p-value &lt; 2.2e-16).
+Taking all second-order interactions into account further improved the model (R<sup>2</sup> = 0.093; adjusted R<sup>2</sup> = 0.092) and TargetScan score combined with most other factors (except #site_m) showed significant coefficients (Fig. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S5">S5</a> and Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S20">S20</a> in the Supplementary information). Together, these results show that although target site-dependent features, such as those modeled by TargetScan, are important for miRNA targeting, target mRNA, sample, and platform level features are also important for correctly interpreting miRNA high-throughput experiments. Specifically, in our analyses, target site-dependent and -independent features explain about the same amount of variation in target gene expression.</p>
+      <h4 id="F:6" class="no_toc">
+        
+        
+          <a href="#F:6" class="anchor-heading" aria-labelledby="F:6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/linear-regression-mirna-target-9-features.webp" alt="Figure 6" width="500" /></p>
+      <h5 class="no_toc text-caption" id="figure-6-coefficients-of-a-linear-regression-with-nine-factors">
+        
+        
+          <a href="#figure-6-coefficients-of-a-linear-regression-with-nine-factors" class="anchor-heading" aria-labelledby="figure-6-coefficients-of-a-linear-regression-with-nine-factors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 6</strong>. Coefficients of a linear regression with nine factors.
+        
+        
+      </h5>
+    
+<p class="fs-2">The dot plot shows the coefficients of the liner model with formula: -log ratio = ln3 + cs3 + exp +#site_m + #endo_m + #site_s + p_ma + e_oe + ts_score. The dot size shows -log10 of the coefficient’s p-value. Positive coefficients associate with miRNA down-regulation.</p><hr />
+      <h3 id="S:3-16">
+        
+        
+          <a href="#S:3-16" class="anchor-heading" aria-labelledby="S:3-16"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> CpG frequency, and Developmental and Housekeeping genes: Overall gene expression is a major confounding factor when analyzing microarray data.
+        
+        
+      </h3>
+    
+<p>As studies reported that miRNAs preferably target the high-CpG (CpGH) genes <a class="citation" href="#Sinha2008">[14]</a> and developmentally regulated (Dev) genes <a class="citation" href="#Stefani2008">[4]</a> and also tend to avoid targeting house-keeping (HK) genes <a class="citation" href="#Bartel2004">[2,8]</a>, we expected the CpGH, Dev, and non-housekeeping (Non-HK) genes to be strongly down-regulated in the experimental data. To test miRNA down-regulation of these features, we split them into smaller sub-groups and used predicted miRNA or siRNA target genes to test whether any sub-group was more down-regulated than the others (Fig. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S7">7</a>). As expected, the CpGH genes were significantly affected (Fig. <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#F:S7">7</a>A; Tables <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S21">S21</a> in the Supplementary information), but we observed the opposite to the expected for the Dev and Non-HK genes (Fig. <a href="#F:7">7</a>B,C; Tables <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S22">S22</a> and <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S23">S23</a> in the Supplementary information). Importantly, only the microarray data showed these unexpected differential effects. The proteomics data showed slightly stronger effects on the Dev and Non-HK genes, although only one of four comparisons was significant (Tables <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S22">S22</a> and <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S23">S23</a> in the Supplementary information). We therefore reasoned that the results could be related to the microarrays’ bias towards detecting differential expression among highly expressed genes.</p>
+      <h4 id="F:7" class="no_toc">
+        
+        
+          <a href="#F:7" class="anchor-heading" aria-labelledby="F:7"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h4>
+    
+<p><img src="/mitkb/assets/images/confounding/strong-mirna-target-factors-in-microarrays.webp" alt="Figure 7" width="500" /></p>
+      <h5 class="no_toc text-caption" id="figure-7-cpg-rich-genes-non-developmental-genes-and-house-keeping-genes-appear-to-be-strong-mirna-targets-in-microarray-experiments">
+        
+        
+          <a href="#figure-7-cpg-rich-genes-non-developmental-genes-and-house-keeping-genes-appear-to-be-strong-mirna-targets-in-microarray-experiments" class="anchor-heading" aria-labelledby="figure-7-cpg-rich-genes-non-developmental-genes-and-house-keeping-genes-appear-to-be-strong-mirna-targets-in-microarray-experiments"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 7</strong>. CpG-rich genes, non-developmental genes, and house-keeping genes appear to be strong miRNA targets in microarray experiments.
+        
+        
+      </h5>
+    
+<p class="fs-2">We subdivided all RefSeq genes into sub-groups based on three different features: CpG frequency (CpG), and whether the genes were developmental (Dev) and house-keeping (HK) genes (see Methods). See Fig. <a href="#F:1">1</a> for a description of the heat maps.</p><hr />
+
+<p>Consistent with this hypothesis, non-parametric tests to find the characteristics of CpG, HK, and Dev showed that CpGH and HK genes had more highly expressed genes than the other sub-groups and also showed that Dev genes had more lowly expressed genes (Table <a href="#T:4">4</a>). We therefore concluded that the genes’ overall expression level was the major factor behind the observed differences within the CpG, Dev, and HK groups.</p><hr />
+      <h4 id="T:4" class="no_toc text-caption">
+        
+        
+          <a href="#T:4" class="anchor-heading" aria-labelledby="T:4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 4</strong>. P-values of multiple Wilcoxon rank-sum tests on 3 miRNA target features for CpGH, House-keeping, and Developmental genes.
+        
+        
+      </h4>
+    
+
+<div class="table-wrapper"><table>
+  
+    
+      
+      <thead> <tr>
+        
+          
+            <th>
+          
+          
+            Gene type
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Feature
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Greater
+          
+            </th>
+        
+          
+            <th>
+          
+          
+            Less
+          
+            </th>
+        
+      </tr> </thead>
+      <tbody>
+      
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        CpGH
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Length
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3.85E-96*
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Consv
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        2.13E-206*
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        mRNA Exp
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0*
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        Development
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Length
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        8.46E-17*
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Consv
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        2.11E-51*
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        mRNA Exp
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0.989438416
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0.010561646*
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        House-keeping
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Length
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1.89E-20*
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        3' UTR Consv
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0.469643425
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        0.530357925
+      
+        </td>
+    
+    </tr>
+  
+    
+    <tr>
+    
+      
+      
+        <td>
+      
+      
+        
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        mRNA Exp
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1.57E-91*
+      
+        </td>
+    
+      
+      
+        <td>
+      
+      
+        1
+      
+        </td>
+    
+    </tr>
+  
+  </tbody>
+</table></div>
+
+<p class="fs-2">Lower p-values in the Greater column indicate that the gene set of the Gene type overall has longer 3’ UTR lengths, more conserved 3’ UTRs, or stronger mRNA expression than has the rest of the human protein coding genes. Lower p-values in the Less column indicates the opposite characteristics; that is, shorter 3’ UTR lengths, less conserved 3’ UTRs, or lower mRNA expression.</p><hr />
+      <h2 id="S:4">
+        
+        
+          <a href="#S:4" class="anchor-heading" aria-labelledby="S:4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conclusions
+        
+        
+      </h2>
+    
+<p>We analyzed the average regulatory effects that ectopically expressed miRNAs or siRNAs have on large gene sets and identified two strong factors. First, competition between endogenous miRNAs and the ectopically expressed RNAs have a strong impact on targets’ regulatory response. Genes with very long 3’ UTRs, for example, are likely targeted by endogenous miRNAs and therefore less affected by exogenous miRNAs than are genes with shorter 3’ UTRs. Second, target gene expression is a strong confounding factor when analyzing microarray experiments. Target genes with strong expression levels were significantly down-regulated compared to other expressed genes only in the microarray experiments. One explanation is that some genes are highly expressed simply because they are less targeted by endogenous miRNAs, and, therefore, ectopically expressed miRNAs have stronger down-regularly effects on these genes. Consistent with this explanation, miRNA transfection experiments give stronger target expression changes than do miRNA inhibition experiments.</p>
+
+<p>Another explanation is that microarrays, compared with high throughput proteomics, report significant expression data for many more lowly expressed genes. This technological difference means that microarrays can detect more differentially expressed genes than can high throughput proteomics. However, microarrays generally detect less differential expression for lowly expressed genes than for highly expressed genes. Consequently, microarrays will find a smaller fraction of the lowly expressed genes than of the highly expressed genes to be differentially expressed. The result is that when using microarray data to compare average down-regulation of miRNA-targets among house-keeping genes and developmentally regulated genes – genes that have high and low average expression levels, respectively – the average down-regulation is stronger for house-keeping genes than for developmental genes. This difference is contrary to the general consensus within the field <a class="citation" href="#Bartel2009">[7]</a> and our analyses of high-throughput proteomics data which indicate that developmentally regulated genes are more likely miRNA targets than are house-keeping genes. Supporting this, our regression analysis shows that when such experiment-related confounding factors have been taken into account, miRNAs more effectively knock down lowly expressed than highly expressed genes.</p>
+
+<p>These results suggest that it is important to consider multiple factors when it comes to assessing miRNA targeting effects. One example of this relates to the so-called target dilution effect. A previous analysis has reported that the total expression level of target candidates for ectopically expressed miRNAs affects the targets’ average knockdown such that high total expression gives low average knockdown <a class="citation" href="#Arvey2010">[22]</a>. Our analyses, however, show that some of this dilution effect can be explained by interactions with endogenous miRNAs. Consequently, it is very important to consider what genes are already targeted by endogenous miRNAs when designing and interpreting high throughput miRNA or siRNA experiments.</p>
+
+<p>In summary, our results can explain the results from several recent studies that have analyzed features that are important for miRNA regulation and found that the importance of 3’ UTR length, conservation, and target gene expression depend on the technology used to measure miRNA targeting. Our results urge especial caution when using microarray data to compare average regulatory effects between groups of genes that have different average gene expression levels, such as high and low CpG genes and housekeeping and developmentally regulated genes.</p>
+      <h2 id="S:5">
+        
+        
+          <a href="#S:5" class="anchor-heading" aria-labelledby="S:5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Methods
+        
+        
+      </h2>
+    
+      <h3 id="S:5-1">
+        
+        
+          <a href="#S:5-1" class="anchor-heading" aria-labelledby="S:5-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data retrieval
+        
+        
+      </h3>
+    
+<p><strong>miRNA annotation and miRNA seed types</strong>: We downloaded the annotations of human miRNAs, mature miRNAs, and miRNA families from miRBase (release 12.0) <a class="citation" href="#Griffiths-Jones2008">[29]</a>.</p>
+
+<p><strong>Microarray and proteomics datasets</strong>: We downloaded four microarray datasets, the Jackson <a class="citation" href="#Jackson2006">[24]</a>, Lim <a class="citation" href="#Lim2005">[17]</a>,  Grimson <a class="citation" href="#Grimson2007">[18]</a>, and Linsley <a class="citation" href="#Linsley2007">[30]</a> from the Gene Expression Omnibus (GEO) database [GEO:GSE5814, GEO:GSE2075, GEO:GSE8501, GEO:GSE6838] <a class="citation" href="#Barrett2007">[31]</a>, and two proteomics datasets, Selbach <a class="citation" href="#Selbach2008">[20]</a> and Baek <a class="citation" href="#Baek2008">[19]</a>, from the original publications along with the corresponding microarray datasets. In total, we used six microarray and two proteomics datasets. Samples from both microarray and proteomics used in this study are listed in Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S2">S2</a> in the Supplementary information.</p>
+
+<p><strong>3’ UTR sequence and conservation</strong>: We downloaded the RefSeq transcripts (hg18), human chromosome sequences, and multiz 17-way <a class="citation" href="#Blanchette2004">[32]</a> for conserved sequences from the University of California, Santa Cruz (UCSC) Genome Browser <a class="citation" href="#Kent2002">[33]</a>. The positional data used to generate nucleotide sequences were the exon positions from RefSeq for the 3’ UTR region. We selected the longest 3’ UTRs when a RefSeq entry had multiple transcripts. In addition to the human sequences, we generated 3’ UTR sequences conserved in human, mouse, and rat (HMR) from multiz 17-way.</p>
+
+<p><strong>mRNA expression in HeLa</strong>: We used replicate 1 of the ENCODE Caltech RNA-Seq data <a class="citation" href="#Birney2007">[25]</a> from USCS for the mRNA expression in HeLa.</p>
+
+<p><strong>House keeping and developmental genes</strong>: We obtained housekeeping genes from a list generated by a Naive Bayes classifier <a class="citation" href="#DeFerrari2006">[34]</a>, and the developmental genes from the Gene Ontology [GO:0032502] <a class="citation" href="#Ashburner2000">[35]</a>.</p>
+
+<p><strong>Endogenous miRNAs in HeLa</strong>: We used the Mammalian microRNA Expression Atlas <a class="citation" href="#Landgraf2007">[36]</a> to define the endogenous miRNAs in HeLa. For endogenous miRNAs, we selected the top 10 highly expressed miRNA families and used the miRNAs that belong to these miRNA families. We used three stringent seed types –  8mer, 7mer-A1, and 7mer-m8 – to search the candidate sites of the endogenous miRNAs.</p>
+
+<p><strong>PAR-CLIP</strong>: We obtained PAR-CLIP high-throughput sequencing data of all four AGO proteins from the GEO database [GEO:GSE21918] <a class="citation" href="#Hafner2010">[15]</a>. We used positional information downloaded with the sequence reads and mapped these positions on 3’ UTR regions of all RefSeq genes. We considered 3’ UTRs that had at least one site with the number of mapped reads greater than or equal to five to have an AGO binding site.</p>
+      <h3 id="S:5-2">
+        
+        
+          <a href="#S:5-2" class="anchor-heading" aria-labelledby="S:5-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data preparation
+        
+        
+      </h3>
+    
+<p><strong>Data preparation for microarray and proteomics data</strong>: We used pre-processed data either from GEO or from the original publications. All log-ratio values that were pre-computed in log2 were transformed to log10. Log-ratio values of two inhibition experiments, Selbach LNA and Linsley OME, were negated because genes with positive log-ratio values were potential miRNA targets for these experiments.</p>
+
+<p><strong>Predicted miRNA or siRNA targets</strong>: We separated the genes of each high throughput experiment by target prediction into “Target” and “Non-target” genes. The target prediction method we uses was a simple stringent seed search on the 3’ UTRs and a gene was defined as a “Target” when the gene contained a seed site for the miRNA or siRNA used in the experiment. We used the previously described three stringent seed types, 8mer, 7mer-A1, and 7mer-m8, to define miRNA targets <a class="citation" href="#Bartel2009">[7]</a>.</p>
+
+<p><strong>3’ UTR sequence length</strong>: For the 3’ UTR sequence length, we made five sub-groups, Very Long (&gt;4000 nts), Long (1373 ~ 4000 nts), Medium Long (630 ~ 1372 nts), Medium Short (248 ~ 629 nts), and Short (0 ~ 247 nts). The first group Very Long was decided from our previous study <a class="citation" href="#Saito2010">[13]</a> because it showed that the genes with 3’ UTR length longer than 4000 nucleotides were less targeted by miRNAs. We sorted the rest of the sequences by 3’ UTR length and divided them into four equally sized sub-groups.</p>
+
+<p><strong>3’ UTR sequence conservation</strong>: For the 3’ UTR sequence conservation, we calculated the conservation scores for each sequence by counting the number of conserved nucleotides in the HMR sequences and then divided the resulting number by the length of the sequence. We sorted the sequences with non-zero scores and divided them into three equal sub-groups; High (&gt;0.238), Medium (0.054 ~ 0.238), and Low (0 ~ 0.238). The sequences with zero scores were categorized as NoConsv.</p>
+
+<p><strong>mRNA expression level</strong>: We used the average number of tags from Caltech RNA-Seq as a measure (score) of mRNA expression levels. We sorted the mRNAs with non-zero expression scores by score and then divided them into five equally sized sub-groups; Very High (&gt; 0.2007), High (0.0795 ~ 0.2007), Medium (0.0344 ~ 0.0795), Low (0.008 ~ 0.0344), and Very Low (0 ~ 0.008). The mRNAs with zero scores were categorized as NoExp.</p>
+
+<p><strong>CpG frequency in promoters</strong>: We defined the promoter regions as 1000 nucleotides upstream from the transcription start site. We used a moving window approach (500 nt window moving 5 nt at the time) to compute the CpG frequency and classified the CpG frequency as “high” when at least one 500-nucleotide-window contained &gt;55% GC content and &gt;75% CpG content, “low” when none of the windows contained &gt;48% CpG content, and “medium” for the rest <a class="citation" href="#Weber2007">[37]</a>.</p>
+
+<p><strong>House keeping and developmental genes</strong>: We mapped house-keeping and developmental genes to based on gene IDs RefSeq genes. Non-house keeping and non-developmental genes were the rest of the RefSeq genes that were not mapped.</p>
+
+<p><strong>Endogenous miRNA targets</strong>: We split “Target” and “Non-Target” genes into “With endogenous” and “Without endogenous” to make the T +Endo, T -Endo, NT +Endo, and NT -Endo gene groups, where “T” and “NT” represent “Target” and “Non-Target”, whereas “+Endo” and “-Endo” represent “With endogenous” and “Without endogenous”. We defined a gene as “With endogenous” when the gene was a predicted targeted for one or more of the top 10 most highly expressed endogenous miRNA families. The same approach as for predicting miRNA and siRNA targets was used to predict target genes for endogenous miRNAs.</p>
+
+<p><strong>Total mRNA expression levels and total number of target sites for the dilution effects</strong>: We calculated both the total mRNA expression and the number of target transcripts as previously described <a class="citation" href="#Arvey2010">[22]</a>. The total mRNA expression was a sample level sum of the average number of tags from Caltech RNA-Seq for predicted miRNA or siRNA target genes. The total number of target sites was a sample level sum of the number of target sites in predicted miRNA or siRNA target genes.</p>
+
+<p><strong>mRNA level TargetScan scores</strong>: The stand alone version of TargetScan was downloaded from the TargetScan website (<a href="http://www.targetscan.org">http://www.targetscan.org</a>). We then ran TargetScan on the 3’ UTR sequences of the genes from the 10 miRNA high-throughput experiments with corresponding miRNA or siRNA sequences. The scores of target sites were aggregated by miRNA:mRNA pairs, and the aggregated scores were negated. Therefore, a high mRNA-level TargetScan score indicates that the mRNA is a strong candidate for miRNA down-regulation.</p>
+      <h3 id="S:5-3">
+        
+        
+          <a href="#S:5-3" class="anchor-heading" aria-labelledby="S:5-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Statistical analysis
+        
+        
+      </h3>
+    
+<p><strong>Non-parametric tests</strong>: We used the log-ratio values from 10 different experiments (Table S1 in the Supplementary information) that contain 140 different samples (Table <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#T:S2">S2</a> in the Supplementary information) to measure the contributions of different groups to miRNA targeting efficacy. To test the significance level between multiple groups, we performed both one-sided Wilcoxon rank-sum and one-sided Kolmogorov–Smirnov non-parametric multiple comparison tests on the log-ratio values.</p>
+
+<p><strong>Sample level scores</strong>: We performed non-parametric tests on 140 samples and counted the number of samples that had a significant p-value (&lt;0.05) to calculate the proportion per experiment as Sample level score.</p>
+
+<p><strong>PAR-CLIP analysis</strong>: We merged the five sub-groups of 3’ UTR lengths into the two bigger groups long (Very Long and Long) and short (Med Long, Med Short, and Short) for all RefSeq genes and identified potential miRNA target genes bound by the four AGOs. The numbers of bound genes in the long and short groups were compared between each AGO and all RefSeq genes by Fisher’s exact test.</p>
+
+<p><strong>Log2 enrichment of down-regulated genes</strong>: The enrichment was calculated as the average log ratio values of down-regulated genes (p-value  &lt; 0.01 and log ratio  &lt; -0.01 for microarray, and log ratio  &lt; -0.01 for proteomics) divided by the average log-ratio values of all genes.</p>
+
+<p><strong>Linear regression</strong>: All factors were normalized to the [0,1] value range before building linear regression models. The normalization was linear; that is,  (feature value - min) / (max - min), where min and max values were defined for each factor as ln (min: -2.0, max: 2.0), ln3 (min: 0, max: 1000), cs3 (min:0, max: 1), exp (min:6.1e-5, max: 64.0), #site_m (min: 0, max: 20), #endo_m (min: 0, max: 30), #endo_s (min: 0, max: 6000), and ts_score (min: 0.0, max: 2.0).</p>
+      <h2 id="S:6">
+        
+        
+          <a href="#S:6" class="anchor-heading" aria-labelledby="S:6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Additional files
+        
+        
+      </h2>
+    
+<p>Additional file 1 – <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information">Supplementary information</a> [<a href="/mitkb/assets/Saito_2012_Confounding_factors-supplementary_information.pdf">PDF</a>] <br />
+Additional file 1 contains <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#S:1">Supplementary Table</a> S1-S23 and <a href="/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information#S:2">Supplementary Figures</a> S1-S5.</p>
+      <h2 id="S:7">
+        
+        
+          <a href="#S:7" class="anchor-heading" aria-labelledby="S:7"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Competing interests
+        
+        
+      </h2>
+    
+<p>The authors declare that they have no competing interests.</p>
+      <h2 id="S:8">
+        
+        
+          <a href="#S:8" class="anchor-heading" aria-labelledby="S:8"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Authors’ contributions
+        
+        
+      </h2>
+    
+<p>All authors contributed to the underlying ideas of the method and the analysis. TS implemented the initial model of statistical analyses. All authors contributed to the statistical analysis. The initial manuscript draft was written by TS, and refined by PS. All authors read and approved the final manuscript.</p>
+      <h2 id="S:9">
+        
+        
+          <a href="#S:9" class="anchor-heading" aria-labelledby="S:9"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Acknowledgements
+        
+        
+      </h2>
+    
+<p>We thank Morten Rye for assistance with RNAseq data analysis. This work was supported by the Functional Genomics Program (FUGE) of the Norwegian Research Council.</p>
+      <h2 id="S:10">
+        
+        
+          <a href="#S:10" class="anchor-heading" aria-labelledby="S:10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> References
+        
+        
+      </h2>
+    
+<ol class="bibliography"><li><span id="Ambros2004">Ambros V. The functions of animal microRNAs. Nature 2004;431:350–5. <a href="https://doi.org/10.1038/nature02871">https://doi.org/10.1038/nature02871.</a></span>
+</li>
+<li><span id="Bartel2004">Bartel DP. MicroRNAs: genomics, biogenesis, mechanism, and function. Cell 2004;116:281–97. <a href="https://doi.org/10.1016/s0092-8674(04)00045-5">https://doi.org/10.1016/s0092-8674(04)00045-5.</a></span>
+</li>
+<li><span id="Hwang2007">Hwang H-W, Wentzel EA, Mendell JT. A hexanucleotide element directs MicroRNA nuclear import. Science 2007;315:97–100. <a href="https://doi.org/10.1126/science.1136235">https://doi.org/10.1126/science.1136235.</a></span>
+</li>
+<li><span id="Stefani2008">Stefani G, Slack FJ. Small non-coding RNAs in animal development. Nature Reviews Molecular Cell Biology 2008;9:219–30. <a href="https://doi.org/10.1038/nrm2347">https://doi.org/10.1038/nrm2347.</a></span>
+</li>
+<li><span id="Croce2009">Croce CM. Causes and consequences of microRNA dysregulation in cancer. Nature Reviews Genetics 2009;10:704–14. <a href="https://doi.org/10.1038/nrg2634">https://doi.org/10.1038/nrg2634.</a></span>
+</li>
+<li><span id="Friedman2009">Friedman RC, Farh KK-H, Burge CB, Bartel DP. Most mammalian mRNAs are conserved targets of microRNAs. Genome Research 2008;19:92–105. <a href="https://doi.org/10.1101/gr.082701.108">https://doi.org/10.1101/gr.082701.108.</a></span>
+</li>
+<li><span id="Bartel2009">Bartel DP. MicroRNAs: target recognition and regulatory functions. Cell 2009;136:215–33. <a href="https://doi.org/10.1016/j.cell.2009.01.002">https://doi.org/10.1016/j.cell.2009.01.002.</a></span>
+</li>
+<li><span id="Stark2005">Stark A, Brennecke J, Bushati N, Russell RB, Cohen SM. Animal MicroRNAs confer robustness to gene expression and have a significant impact on 3′UTR evolution. Cell 2005;123:1133–46. <a href="https://doi.org/10.1016/j.cell.2005.11.023">https://doi.org/10.1016/j.cell.2005.11.023.</a></span>
+</li>
+<li><span id="Sandberg2008">Sandberg R, Neilson JR, Sarma A, Sharp PA, Burge CB. Proliferating cells express mRNAs with shortened 3’ untranslated regions and fewer MicroRNA target sites. Science 2008;320:1643–7. <a href="https://doi.org/10.1126/science.1155390">https://doi.org/10.1126/science.1155390.</a></span>
+</li>
+<li><span id="Hausser2009">Hausser J, Landthaler M, Jaskiewicz L, Gaidatzis D, Zavolan M. Relative contribution of sequence and structure features to the mRNA binding of Argonaute/EIF2C-miRNA complexes and the degradation of miRNA targets. Genome Res 2009;19:2009–20. <a href="https://doi.org/10.1101/gr.091181.109">https://doi.org/10.1101/gr.091181.109.</a></span>
+</li>
+<li><span id="Hong2009">Hong X, Hammell M, Ambros V, Cohen SM. Immunopurification of Ago1 miRNPs selects for a distinct class of microRNA targets. Proc Natl Acad Sci U S A 2009;106:15085–90. <a href="https://doi.org/10.1073/pnas.0908149106">https://doi.org/10.1073/pnas.0908149106.</a></span>
+</li>
+<li><span id="Wen2011">Wen J, Parker BJ, Jacobsen A, Krogh A. MicroRNA transfection and AGO-bound CLIP-seq data sets reveal distinct determinants of miRNA action. RNA 2011;17:820–34. <a href="https://doi.org/10.1261/rna.2387911">https://doi.org/10.1261/rna.2387911.</a></span>
+</li>
+<li><span id="Saito2010">Saito T, Sætrom P. MicroRNAs - targeting and target prediction. New Biotechnology 2010;27:243–9. <a href="https://doi.org/10.1016/j.nbt.2010.02.016">https://doi.org/10.1016/j.nbt.2010.02.016.</a></span>
+</li>
+<li><span id="Sinha2008">Sinha S, Adler AS, Field Y, Chang HY, Segal E. Systematic functional characterization of cis-regulatory motifs in human core promoters. Genome Research 2008;18:477–88. <a href="https://doi.org/10.1101/gr.6828808">https://doi.org/10.1101/gr.6828808.</a></span>
+</li>
+<li><span id="Hafner2010">Hafner M, Landthaler M, Burger L, Khorshid M, Hausser J, Berninger P, et al. Transcriptome-wide identification of RNA-binding protein and MicroRNA target sites by PAR-CLIP. Cell 2010;141:129–41. <a href="https://doi.org/10.1016/j.cell.2010.03.009">https://doi.org/10.1016/j.cell.2010.03.009.</a></span>
+</li>
+<li><span id="Larsson2010">Larsson E, Sander C, Marks D. mRNA turnover rate limits siRNA and microRNA efficacy. Mol Syst Biol 2010;6:433. <a href="https://doi.org/10.1038/msb.2010.89">https://doi.org/10.1038/msb.2010.89.</a></span>
+</li>
+<li><span id="Lim2005">Lim LP, Lau NC, Garrett-Engele P, Grimson A, Schelter JM, Castle J, et al. Microarray analysis shows that some microRNAs downregulate large numbers of target mRNAs. Nature 2005;433:769–73. <a href="https://doi.org/10.1038/nature03315">https://doi.org/10.1038/nature03315.</a></span>
+</li>
+<li><span id="Grimson2007">Grimson A, Farh KK-H, Johnston WK, Garrett-Engele P, Lim LP, Bartel DP. MicroRNA targeting specificity in mammals: determinants beyond seed pairing. Molecular Cell 2007;27:91–105. <a href="https://doi.org/10.1016/j.molcel.2007.06.017">https://doi.org/10.1016/j.molcel.2007.06.017.</a></span>
+</li>
+<li><span id="Baek2008">Baek D, Villén J, Shin C, Camargo FD, Gygi SP, Bartel DP. The impact of microRNAs on protein output. Nature 2008;455:64–71. <a href="https://doi.org/10.1038/nature07242">https://doi.org/10.1038/nature07242.</a></span>
+</li>
+<li><span id="Selbach2008">Selbach M, Schwanhäusser B, Thierfelder N, Fang Z, Khanin R, Rajewsky N. Widespread changes in protein synthesis induced by microRNAs. Nature 2008;455:58–63. <a href="https://doi.org/10.1038/nature07228">https://doi.org/10.1038/nature07228.</a></span>
+</li>
+<li><span id="Khan2009">Khan AA, Betel D, Miller ML, Sander C, Leslie CS, Marks DS. Transfection of small RNAs globally perturbs gene regulation by endogenous microRNAs. Nature Biotechnology 2009;27:549–55. <a href="https://doi.org/10.1038/nbt.1543">https://doi.org/10.1038/nbt.1543.</a></span>
+</li>
+<li><span id="Arvey2010">Arvey A, Larsson E, Sander C, Leslie CS, Marks DS. Target mRNA abundance dilutes microRNA and siRNA activity. Molecular Systems Biology 2010;6:363. <a href="https://doi.org/10.1038/msb.2010.24">https://doi.org/10.1038/msb.2010.24.</a></span>
+</li>
+<li><span id="Birmingham2006">Birmingham A, Anderson EM, Reynolds A, Ilsley-Tyree D, Leake D, Fedorov Y, et al. 3\prime UTR seed matches, but not overall identity, are associated with RNAi off-targets. Nature Methods 2006;3:199–204. <a href="https://doi.org/10.1038/nmeth854">https://doi.org/10.1038/nmeth854.</a></span>
+</li>
+<li><span id="Jackson2006">Jackson AL, Burchard J, Schelter J, Chau BN, Cleary M, Lim L, et al. Widespread siRNA "off-target" transcript silencing mediated by seed region sequence complementarity. RNA 2006;12:1179–87. <a href="https://doi.org/10.1261/rna.25706">https://doi.org/10.1261/rna.25706.</a></span>
+</li>
+<li><span id="Birney2007">Birney E, Stamatoyannopoulos JA, Dutta A, Guigo R, Gingeras TR, Margulies EH, et al. Identification and analysis of functional elements in 1% of the human genome by the ENCODE pilot project. Nature 2007;447:799–816. <a href="https://doi.org/10.1038/nature05874">https://doi.org/10.1038/nature05874.</a></span>
+</li>
+<li><span id="Shkumatava2009">Shkumatava A, Stark A, Sive H, Bartel DP. Coherent but overlapping expression of microRNAs and their targets during vertebrate development. Genes Dev 2009;23:466–81. <a href="https://doi.org/10.1101/gad.1745709">https://doi.org/10.1101/gad.1745709.</a></span>
+</li>
+<li><span id="Guo2010">Guo H, Ingolia NT, Weissman JS, Bartel DP. Mammalian microRNAs predominantly act to decrease target mRNA levels. Nature 2010;466:835–40. <a href="https://doi.org/10.1038/nature09267">https://doi.org/10.1038/nature09267.</a></span>
+</li>
+<li><span id="Evans2003">Evans SJ, Watson SJ, Akil H. Evaluation of sensitivity, performance and reproducibility of microarray technology in neuronal tissue. Integrative and Comparative Biology 2003;43:780–5. <a href="https://doi.org/10.1093/icb/43.6.780">https://doi.org/10.1093/icb/43.6.780.</a></span>
+</li>
+<li><span id="Griffiths-Jones2008">Griffiths-Jones S, Saini HK, Dongen S van, Enright AJ. miRBase: tools for microRNA genomics. Nucleic Acids Research 2007;36:D154–D158. <a href="https://doi.org/10.1093/nar/gkm952">https://doi.org/10.1093/nar/gkm952.</a></span>
+</li>
+<li><span id="Linsley2007">Linsley PS, Schelter J, Burchard J, Kibukawa M, Martin MM, Bartz SR, et al. Transcripts targeted by the MicroRNA-16 family cooperatively regulate cell cycle progression. Molecular and Cellular Biology 2007;27:2240–52. <a href="https://doi.org/10.1128/mcb.02005-06">https://doi.org/10.1128/mcb.02005-06.</a></span>
+</li>
+<li><span id="Barrett2007">Barrett T, Troup DB, Wilhite SE, Ledoux P, Rudnev D, Evangelista C, et al. NCBI GEO: mining tens of millions of expression profiles–database and tools update. Nucleic Acids Research 2007;35:D760–D765. <a href="https://doi.org/10.1093/nar/gkl887">https://doi.org/10.1093/nar/gkl887.</a></span>
+</li>
+<li><span id="Blanchette2004">Blanchette M, Kent WJ, Riemer C, Elnitski L, Smit AFA, Roskin KM, et al. Aligning multiple genomic sequences with the threaded blockset aligner. Genome Research 2004;14:708–15. <a href="https://doi.org/10.1101/gr.1933104">https://doi.org/10.1101/gr.1933104.</a></span>
+</li>
+<li><span id="Kent2002">Kent WJ, Sugnet CW, Furey TS, Roskin KM, Pringle TH, Zahler AM, et al. The human genome browser at UCSC. Genome Res 2002;12:996–1006. <a href="https://doi.org/10.1101/gr.229102">https://doi.org/10.1101/gr.229102.</a></span>
+</li>
+<li><span id="DeFerrari2006">Ferrari LD, Aitken S. Mining housekeeping genes with a Naive Bayes classifier. BMC Genomics 2006;7:277–. <a href="https://doi.org/10.1186/1471-2164-7-277">https://doi.org/10.1186/1471-2164-7-277.</a></span>
+</li>
+<li><span id="Ashburner2000">Ashburner M, Ball CA, Blake JA, Botstein D, Butler H, Cherry JM, et al. Gene Ontology: tool for the unification of biology. Nature Genetics 2000;25:25–9. <a href="https://doi.org/10.1038/75556">https://doi.org/10.1038/75556.</a></span>
+</li>
+<li><span id="Landgraf2007">Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, et al. A mammalian microRNA expression atlas based on small RNA library sequencing. Cell 2007;129:1401–14. <a href="https://doi.org/10.1016/j.cell.2007.04.040">https://doi.org/10.1016/j.cell.2007.04.040.</a></span>
+</li>
+<li><span id="Weber2007">Weber M, Hellmann I, Stadler MB, Ramos L, Paabo S, Rebhan M, et al. Distribution, silencing potential and evolutionary impact of promoter DNA methylation in the human genome. Nat Genet 2007;39:457–66. <a href="https://doi.org/10.1038/ng1990">https://doi.org/10.1038/ng1990.</a></span>
+</li></ol>
+
+        
+
+        
+
+        
+          <hr>
+          <h2>Leave a comment</h2>
+          <div id="disqus_thread"></div>
+        
+
+        
+        
+          <hr>
+          <footer>
+            
+              <p><a href="#top" id="back-to-top">Back to top</a></p>
+            
+
+            <p class="text-small text-grey-dk-100 mb-0">Copyright &copy; 2021 Takaya Saito.</p>
+
+            
+              <div class="d-flex mt-2">
+                
+                
+              </div>
+            
+          </footer>
+        
+
+      </div>
+    </div>
+
+    
+      
+
+      <div class="search-overlay"></div>
+    
+  </div>
+
+  
+     <script>addBackToTop({
+       id: 'back-to-top-js-button'
+     })</script>
+  
+
+  
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mitkb.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</body>
+</html>
+

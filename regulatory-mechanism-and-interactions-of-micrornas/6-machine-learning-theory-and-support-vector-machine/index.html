@@ -1,0 +1,1072 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/mitkb/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/mitkb/assets/css/just-the-docs-default.css">
+
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-84ETYTKDBN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-84ETYTKDBN', { 'anonymize_ip': true });
+    </script>
+
+  
+
+  
+    <script type="text/javascript" src="/mitkb/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="/mitkb/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>6 Support vector machine | mitkb</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="6 Support vector machine" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Machine learning theory and Support vector machine" />
+<meta property="og:description" content="Machine learning theory and Support vector machine" />
+<link rel="canonical" href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/6-machine-learning-theory-and-support-vector-machine/" />
+<meta property="og:url" content="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/6-machine-learning-theory-and-support-vector-machine/" />
+<meta property="og:site_name" content="mitkb" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="6 Support vector machine" />
+<script type="application/ld+json">
+{"description":"Machine learning theory and Support vector machine","url":"https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/6-machine-learning-theory-and-support-vector-machine/","@type":"WebPage","headline":"6 Support vector machine","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ncrnas.github.io/mitkb/assets/images/logo.png"}},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+<meta name="google-site-verification" content="vstkqjcoJe9vQcOOpsCKrxv6WfqZ2SKRNWSv7XoHFeQ" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/mitkb/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/mitkb/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/mitkb/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/mitkb/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/mitkb/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+<!-- for mathjax support -->
+
+  <script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      packages: ['base', 'ams']
+    },
+    loader: {
+      load: ['ui/menu', '[tex]/ams']
+    },
+    chtml: {
+      scale: 0.9
+    },
+    svg: {
+      scale: 0.9
+    }
+  };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+
+
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
+
+<script
+  data-cookie-notice='{ "learnMoreLinkEnabled": true, "learnMoreLinkHref": "/mitkb/terms/" }'
+  src="https://unpkg.com/cookie-notice@^1/dist/cookie.notice.min.js"
+></script>
+
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://ncrnas.github.io/mitkb/" class="site-title lh-tight">
+  <div class="site-logo"></div>
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/" class="nav-list-link">Home</a></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/" class="nav-list-link">Overview</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/0-front-matter/" class="nav-list-link">0 Front matter</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/1-introduction/" class="nav-list-link">1 Introduction</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/2-papers-and-their-corresponding-sub-goals/" class="nav-list-link">2 Papers and sub-goals</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/3-micrornas-and-other-non-coding-rnas/" class="nav-list-link">3 miRNAs and ncRNAs</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/4-high-throughput-biological-experiments/" class="nav-list-link">4 Biological experiments</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/5-statistical-tests-and-methods/" class="nav-list-link">5 Statistical methods</a></li><li class="nav-list-item  active"><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/6-machine-learning-theory-and-support-vector-machine/" class="nav-list-link active">6 Support vector machine</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/7-computational-implementation/" class="nav-list-link">7 Implementation</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/8-future-perspectives/" class="nav-list-link">8 Future perspectives</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/" class="nav-list-link">Target prediction</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/micrornas-targeting-and-target-prediction/" class="nav-list-link">Review: miRNA target</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/two-step-svm-model/" class="nav-list-link">Research: Two-step SVM</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/two-step-svm-model-supplementary-information/" class="nav-list-link">Supplementary information</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/" class="nav-list-link">Biological experiments</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments/" class="nav-list-link">Research: Confounding</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information/" class="nav-list-link">Supplementary information</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-and-other-ncrnas/" class="nav-list-link">Other ncRNAs</a><ul class="nav-list "></ul></li><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/support-articles/" class="nav-list-link">Support articles</a></li><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/contact" class="nav-list-link">Contact us</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      <a href="https://ncrnas.github.io/mitkb/terms">Terms and Privacy Policy</a> <br /><br />
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search mitkb" aria-label="Search mitkb" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      
+      
+      
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+            
+              <li class="aux-nav-list-item">
+                <a href="https://github.com/ncrnas/mitkb" class="site-button"
+                  
+                >
+                  mitkb on github
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/">Overview</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>6 Support vector machine</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h1 class="no_toc" id="6-machine-learning-theory-and-support-vector-machine">
+        
+        
+          <a href="#6-machine-learning-theory-and-support-vector-machine" class="anchor-heading" aria-labelledby="6-machine-learning-theory-and-support-vector-machine"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6 Machine learning theory and Support vector machine
+        
+        
+      </h1>
+    <hr />
+
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#S:6.1" id="markdown-toc-S:6.1">6.1 Machine learning: Supervised and Unsupervised</a></li>
+  <li><a href="#S:6.2" id="markdown-toc-S:6.2">6.2 SVM: Theory</a></li>
+  <li><a href="#S:6.3" id="markdown-toc-S:6.3">6.3 SVM: Linear SVM</a></li>
+  <li><a href="#S:6.4" id="markdown-toc-S:6.4">6.4 SVM: Non-linear SVM</a></li>
+  <li><a href="#S:6.5" id="markdown-toc-S:6.5">6.5 Classifier evaluation: Confusion matrix and Receiver operating characteristics</a></li>
+  <li><a href="#S:6.6" id="markdown-toc-S:6.6">6.6 Training and Test data: Single dataset hold-out and k-fold cross validation</a></li>
+  <li><a href="#S:6.7" id="markdown-toc-S:6.7">6.7 SVM: Data pre-processing</a></li>
+  <li><a href="#S:6.8" id="markdown-toc-S:6.8">6.8 SVM: Model selection</a></li>
+  <li><a href="#S:6.9" id="markdown-toc-S:6.9">6.9 SVM: Multiclass and Regression</a></li>
+  <li><a href="#S:6.10" id="markdown-toc-S:6.10">6.10 Other supervised learning algorithms: Decision tree, Artificial neural network, Naive Bayesian, and \(k\)-nearest neighbor</a></li>
+  <li><a href="#S:6.11" id="markdown-toc-S:6.11">References</a></li>
+</ol>
+
+</details><hr />
+
+<p>The support vector machine (SVM) is a machine learning technique that
+has been applied in numerous bioinformatics domains successfully in
+recent years <a class="citation" href="#Pavlidis2004">[1]</a>. We used SVM as a machine learning model to
+achieve the first sub-goal of our research: <em><a href="/mitkb/mirna-target-prediction/">miRNA target prediction</a></em>.
+We built a binary classification model with both linear and non-linear
+approaches. Binary classification predicts only two class labels,
+positive/true or negative/false. This chapter describes the theoretical
+background for SVM, and data preparation and evaluation methods mainly
+for binary classification, followed by other machine learning algorithms
+for comparison.</p>
+      <h2 id="S:6.1">
+        
+        
+          <a href="#S:6.1" class="anchor-heading" aria-labelledby="S:6.1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.1 Machine learning: Supervised and Unsupervised
+        
+        
+      </h2>
+    
+
+<p>Machine learning (ML) techniques have two major paradigms, supervised
+and unsupervised learning. Supervised learning is used for discriminant
+analysis and regression analysis <a class="citation" href="#Tarca2007">[2]</a>, and it requires a
+training process. The training data consists of multiple feature vectors
+and the class labels. The main purpose of the training process is to
+make a classifier that can predict appropriate class labels from the
+feature vectors of the test data. The test data consists of the same
+feature vectors as in the training data, but it has no class labels.
+Unsupervised learning requires no training process, and it categorizes
+unlabeled data. The main application of unsupervised learning is
+clustering. The aim of clustering is to divide the data into groups
+(clusters) using some measures of similarity <a class="citation" href="#Tarca2007">[2]</a>.</p>
+      <h2 id="S:6.2">
+        
+        
+          <a href="#S:6.2" class="anchor-heading" aria-labelledby="S:6.2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.2 SVM: Theory
+        
+        
+      </h2>
+    
+
+<p>SVM is a state-of-the-art supervised machine learning method introduced
+by Boser, Guyon, and Vapnik in 1992 <a class="citation" href="#Boser1992">[3]</a>. SVM is a linear binary
+classification method based on the Structural Risk Minimization (SRM)
+principle <a class="citation" href="#Vapnik1982">[4]</a>. Two essential ideas of SRM are the bound on the
+generalization performance of a learning machine and the Vapnik
+Chervonenkis (VC) dimension <a class="citation" href="#Vapnik1998">[5]</a>.</p>
+
+<p>The aim of SRM is to find a hypothesis \(h\) that has the guaranteed
+lowest probability of error \(Err(h)\) from a hypothesis space \(H\)
+<a class="citation" href="#Joachims2002">[6]</a>. In other words, SRM finds the best machine learning
+model, \(\alpha\), that has lowest test error rate, \(R(\alpha)\), where
+\(R(\alpha)\) is equivalent with \(Err(h)\). The upper bound of the test
+error can guarantee the performance of a learning machine, and the bound
+holds with a probability of at least \(1-\eta\) for a given training
+sample with \(n\) examples <a class="citation" href="#Burges1998">[7]</a>:</p>
+
+\[\label{eq_rm_bound} R(\alpha) \leq R_{emp}(\alpha) + \displaystyle \sqrt{\dfrac{d(\log(2n/d)+1)-\log(\eta)}{4}}, \tag{6.1}\]
+
+<p>where \(R_{emp}(\alpha)\) is a training error rate, and \(d\) is a VC
+dimension.</p>
+
+<p>The VC dimension is a measure of capacity for the data point separation
+by hyperplanes, and this separation is called shattering. A hyperplane
+in Euclidean space can separate the space into two half spaces, and it
+is a subset of \(n-1\) dimension for an \(n\)-dimensional space. For
+example, a straight line is a hyperplane of a two-dimensional Euclidean
+space, whereas a flat-plane is a hyperplane of a three-dimensional
+Euclidean space. The VC dimension varies depending on the selection of a
+machine learning model. For example, the VC dimension of the set of
+oriented hyperplanes in \(\mathbf{R}^{n}\) is \(n+1\) for a simple linear
+binary classifier, such as perceptron. Accordingly, Eq. \eqref{eq_rm_bound}
+reflects a trade-off between the training
+error, \(R_{emp}(\alpha)\), and the complexity of hypothesis space
+estimated by the VC-dimension of a learning machine <a class="citation" href="#Joachims2002">[6]</a>.</p>
+
+<p>SVMs solve this trade-off problem by keeping the VC-dimension low
+through maximizing the margin of boundaries. A SVM can be defined as a
+linear binary classifier:</p>
+
+\[\label{eq_binary_lnr}
+f(\mathbf{x}) = sign(\mathbf{w^{T}x} + b) =  \left\{
+                                               \begin{array}{l l l}
+                                                 +1 &amp; \mathrm{if}   &amp; \mathbf{w^{T}x} + b &gt; 0\\
+                                                 -1 &amp; \mathrm{else} &amp; \\
+                                               \end{array}
+                                              \right. , \tag{6.2}\]
+
+<p>where \(w\) is a weight vector and \(b\) is a threshold. The margin of this classifier,
+\(\delta\), is a length between a boundary hyperplanes, either
+\(\mathbf{w^{T}x} + b = +1\) or \(\mathbf{w^{T}x} + b = -1\), and the
+optimal hyperplane, \(\mathbf{w^{T}x} + b = 0\). The margin is calculated
+as:</p>
+
+\[\label{eq_margin} \delta = \dfrac{1}{||\mathbf{w}||}. \tag{6.3}\]
+
+<p>Vapnik proved that the VC dimension \(d\) for such a classifier defined in
+Eq. \eqref{eq_binary_lnr} is bounded by <a class="citation" href="#Vapnik1982">[4]</a>:</p>
+
+\[\label{eq_vcdimen} d \leq \min \left( \left[ \dfrac{\mathbf{R}^{2}}{\delta^{2}} \right], N \right) + 1, \tag{6.4}\]
+
+<p>when this classifier is in an \(N\) dimensional space, and all example
+vectors, \(\mathbf{x}_{1}, \cdots, \mathbf{x}_{n}\), are inside a ball of
+diameter \(\mathbf{R}\). It indicates that a SVM classifier keeps the
+VC-dimension lower by maximizing the margin of the boundaries between
+two hyperplanes. This is the mathematical background to guarantee that
+SVM has an upper bound of the test error rate even with very large
+feature vectors since the number of feature vectors has very small
+influence on the VC-dimension with SVM.</p>
+      <h2 id="S:6.3">
+        
+        
+          <a href="#S:6.3" class="anchor-heading" aria-labelledby="S:6.3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.3 SVM: Linear SVM
+        
+        
+      </h2>
+    
+
+<p>The aim of SRM is to find an optimal hyperplane than can maximize the
+right term of Eq. \eqref{eq_rm_bound}.
+SVM is based on SRM, and its solution is to
+make a classifier as Eq. \eqref{eq_binary_lnr}
+with the maximum margin of Eq. \eqref{eq_margin}.
+In other words, from many boundaries that can
+separate two classes (Fig. <a href="#F:6.1">6.1</a>A), the SVM finds the optimal hyperplane where the
+margin of the boundary between two hyperplanes,
+\(\mathbf{w^{T}x} + b = +1\) and \(\mathbf{w^{T}x} + b = -1\) becomes the
+maximum (Fig. <a href="#F:6.1">6.1</a>B). Because it is difficult to solve this maximum
+margin problem directly, this problem is usually translated into the
+quadratic optimization problem <a class="citation" href="#Joachims2002">[6]</a>. Quadratic programming
+(QP) is a class of optimization algorithms to either minimize or
+maximize a quadratic function subject to linear constrains. For SVM,
+finding a solution in the prime form of QP defined in Eq. \eqref{eq_s_prime}
+is equivalent to finding the optimal hyperplane
+with the maximum margin. The training data of this SVM are
+\((\mathbf{x}_i, y_i)\) for \(\forall i\) where \(\mathbf{x}_i\) is a feature
+vector with \(N\) dimensions as \(\mathbf{x}_i \in \mathbf{R}^{N}\), and
+\(y_i\) is a class label as \(y_i \in \{-1,+1\}\).</p>
+
+\[\label{eq_s_prime}
+\begin{array}{l l}
+\underset{\mathbf{w},b}{\text{minimize}} &amp; \dfrac{1}{2}||\mathbf{w}||^{2} \\
+\text{subject to}:                       &amp;y_{i}(\mathbf{w^{T}x}_{i} + b) \geq 1, \forall i.
+\end{array} \tag{6.5}\]
+      <h3 id="F:6.1" class="no_toc">
+        
+        
+          <a href="#F:6.1" class="anchor-heading" aria-labelledby="F:6.1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h3>
+    
+<p><img src="/mitkb/assets/images/thesis/svm-hyperplane-and-maximum-margin.webp" alt="Figure 6.1" width="597" /></p>
+      <h4 class="no_toc text-caption" id="figure-61-svm-hyperplanes-and-maximum-margin">
+        
+        
+          <a href="#figure-61-svm-hyperplanes-and-maximum-margin" class="anchor-heading" aria-labelledby="figure-61-svm-hyperplanes-and-maximum-margin"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 6.1</strong>. SVM hyperplanes and maximum margin.
+        
+        
+      </h4>
+    
+<p class="fs-2">The figure shows the
+relationship between hyperplanes and the maximum margin of SVM. Red
+circle and blue square dots represent data points with negative and
+positive labels. <strong>(A)</strong> Many hyperplanes can separate two classes. <strong>(B)</strong>
+Three lines represent hyperplanes with the optimal hyperplane in the
+middle. The margin is a distance between two hyperplanes,
+\(\mathbf{w^{T}x} + b = +1\) and \(\mathbf{w^{T}x} + b = -1\). \(\mathbf{w}\)
+is a weight vector.</p><hr />
+
+<p>However, this prime form of QP (Eq. \ref{eq_s_dual})
+is still numerically difficult to handle
+<a class="citation" href="#Joachims2002">[6]</a>, therefore, it can be further transformed into the dual
+form:</p>
+
+\[\label{eq_s_dual}
+\begin{array}{l l}
+\underset{\alpha}{\text{maximize}} &amp; \displaystyle \sum_{i=1}^{n}\alpha_{i} - \dfrac{1}{2} \displaystyle \sum_{i=1}^{n} \displaystyle \sum_{j=1}^{n} y_{i}y_{j}\alpha_{i}\alpha_{j}\mathbf{x}_{i}^{\mathbf{T}}\mathbf{x}_{j}\\
+\text{subject to}:                 &amp; \displaystyle \sum_{i=1}^{n} y_{i}\alpha_{i} = 0, 0 \leq \alpha_{i}
+\end{array} \tag{6.6}\]
+
+<p>Support vectors are vectors such that their corresponding
+\(\alpha\) values are non-zero in this dual form. SVMs only use these
+support vectors when classifying the test data. The dot product of
+\(\mathbf{x}_{i}^{\mathbf{T}}\mathbf{x}_{j}\) can be used for the kernel
+trick that enables SVMs to solve non-linear problems <a class="citation" href="#Smola2003">[8]</a>.</p>
+
+<p>In many cases, SVMs can find no hyperplanes that separate two classes,
+therefore, the slack variables, \(\xi\), are introduced to allow some
+misclassified data points <a class="citation" href="#Joachims2002">[6]</a>. The SVM with \(\xi_{i}\) is
+called a soft-margin SVM <a class="citation" href="#Cortes1995">[9]</a>, and its prime form is:</p>
+
+\[\label{eq_s_prime_c}
+\begin{array}{l l}
+\underset{\mathbf{w},b}{\text{minimize}} &amp; \dfrac{1}{2}||\mathbf{w}||^{2} + C \displaystyle \sum_{i=1}^{n} \xi_{i} \\
+\text{subject to}:                       &amp;y_{i}(\mathbf{w^{T}x}_{i} + b) \geq 1 - \xi_{i}, \xi_{i} \geq 0, \forall i,
+\end{array} \tag{6.7}\]
+
+<p>where \(C\) is the cost factor that controls the training
+error rate. Small \(C\) allows many misclassified points (Fig. <a href="#F:6.2">6.2</a>A),
+whereas large \(C\) allows few misclassified points between the boundaries
+(Fig. <a href="#F:6.2">6.2</a>B).</p>
+      <h3 id="F:6.2" class="no_toc">
+        
+        
+          <a href="#F:6.2" class="anchor-heading" aria-labelledby="F:6.2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h3>
+    
+<p><img src="/mitkb/assets/images/thesis/svm-linear-kernel-with-soft-margin.webp" alt="Figure 6.2" width="597" /></p>
+      <h4 class="no_toc text-caption" id="figure-62linear-kernel-with-soft-margin">
+        
+        
+          <a href="#figure-62linear-kernel-with-soft-margin" class="anchor-heading" aria-labelledby="figure-62linear-kernel-with-soft-margin"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 6.2</strong>.Linear kernel with soft margin.
+        
+        
+      </h4>
+    
+<p class="fs-2">The figure shows two examples of
+different soft margin constants. Red circle and blue square dots
+represent data points with negative and positive labels, respectively.
+Three lines represent hyperplanes with the optimal hyperplane in the
+middle. The gray scale in the background indicates discriminant values.
+The darker indicates the smaller in negative values, whereas the lighter
+indicates the greater in positive values. <strong>(A)</strong> \(C = 1\). <strong>(B)</strong> \(C = 250\). In
+this example, SVM(A), the SVM in panel A, misclassifies one point,
+whereas SVM(B), the SVM in panel B, classifies all points correctly.
+However, SVM(A) found a better hyperplane between the overall trends in
+circle and square classes than SVM(B). SVM(B) has a much smaller margin
+to the circle class than SVM(A).</p><hr />
+      <h2 id="S:6.4">
+        
+        
+          <a href="#S:6.4" class="anchor-heading" aria-labelledby="S:6.4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.4 SVM: Non-linear SVM
+        
+        
+      </h2>
+    
+
+<p>SVMs can use a kernel function to solve non-linear problems. When the
+feature vectors are mapped to a high dimensional (\(&gt;d\)) feature space,
+\(\mathcal{H}\), from the original \(d\)-dimensional feature space,
+\(\mathbf{R}^{d}\), a non-linear separation in \(\mathbf{R}^{d}\) becomes a
+linear separation in \(\mathcal{H}\) (Fig. <a href="#F:6.3">6.3</a>)
+<a class="citation" href="#Kotsiantis2007">[10]</a>. The non-linear mapping function is defined as:</p>
+
+\[\label{eq_hilbert} \Phi: \mathbf{R}^{d} \mapsto \mathcal{H}. \tag{6.8}\]
+
+<p>The dot product, \(\mathbf{x}_{i}^{\mathbf{T}}\mathbf{x}_{j}\), in Eq. \eqref{eq_s_dual}
+can be replaced by a kernel function defined as:</p>
+
+\[\label{eq_kerneltr}  K(\mathbf{x}_{i},\mathbf{x}_{j}) = \Phi(\mathbf{x}_{i}^{\mathbf{T}}) \cdot \Phi(\mathbf{x}_{j}). \tag{6.9}\]
+
+<p>Two commonly used non-linear kernel functions <a class="citation" href="#Tarca2007">[2]</a> are Gaussian
+Radial Basis Function (RBF):</p>
+
+\[\label{eq_rbk} K(\mathbf{x}_{i},\mathbf{x}_{j}) = \exp(-\gamma||\mathbf{x}_{i} - \mathbf{x}_{j}||^{2}),\tag{6.10}\]
+
+<p>and Polynomial:</p>
+
+\[\label{eq_poli} K(\mathbf{x}_{i},\mathbf{x}_{j}) = (\mathbf{x}_{i}^{\mathbf{T}} \cdot \mathbf{x}_{j} + 1)^{d}. \tag{6.11}\]
+
+<p>These functions are applicable as SVM kernel functions because they can
+be cast in terms of dot products in Eq. \eqref{eq_kerneltr} <a class="citation" href="#Scholkopf2000">[11]</a>.
+Gaussian RBF has a
+parameter, gamma \(\gamma\), and Polynomial has a parameter, degree \(d\).
+These parameters are called kernel parameters, and their optimal values
+are usually unknown. A common practice to find optimal values for the
+kernel parameters is to use k-fold cross validation.</p>
+
+<p>Figure <a href="#F:6.3">6.3</a> shows four examples of both Gaussian RBF and
+Polynomial in two-dimensional space. The gamma parameter in Gaussian RBF
+represents an RBF width, which is sometimes referred to as
+\(1/2\sigma^{2}\), and a larger value means a smaller radius. For example,
+Figure <a href="#F:6.3">6.3</a>A has gamma 0.5, and it is less specific and
+has a larger radius than Figure <a href="#F:6.3">6.3</a>B
+with gamma 4.0. The degree parameter \(d\) in Polynomial is a degree in a
+polynomial function, as in
+\(f(x) = a_{d}x^{d} + a_{d-1}x^{d-1} + \cdots + a_{2}x^{2} + a_{1}x + a_{0}\).
+Figure <a href="#F:6.3">6.3</a>C and D show Polynomial kernels with degree 2
+and 3, respectively.</p>
+      <h3 id="F:6.3" class="no_toc">
+        
+        
+          <a href="#F:6.3" class="anchor-heading" aria-labelledby="F:6.3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h3>
+    
+<p><img src="/mitkb/assets/images/thesis/svm-non-linear-kernels.webp" alt="Figure 6.3" width="600" /></p>
+      <h4 class="no_toc text-caption" id="figure-63-non-linear-kernels">
+        
+        
+          <a href="#figure-63-non-linear-kernels" class="anchor-heading" aria-labelledby="figure-63-non-linear-kernels"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 6.3</strong>. Non-linear kernels.
+        
+        
+      </h4>
+    
+<p class="fs-2">The figure shows four examples of two
+different non-linear kernel functions in two-dimensional space. Each
+kernel has two plots with different parameter values. Red circle and
+blue square dots represent data points with negative and positive
+labels, respectively. Three lines represent hyperplanes with the optimal
+hyperplane in the middle. The gray scale in the background indicates
+discriminant values. The darker indicates the smaller in negative
+values, whereas the lighter indicates the greater in positive values.
+The cost factor \(C\) is 10 for all four kernels. <strong>(A)</strong> Gaussian RBF with
+\(\gamma = 0.5\). <strong>(B)</strong> Gaussian RBF with \(\gamma = 4.0\). <strong>(C)</strong> Polynomial
+with \(d = 2\). <strong>(D)</strong> Polynomial with
+\(d = 3\).</p><hr />
+      <h2 id="S:6.5">
+        
+        
+          <a href="#S:6.5" class="anchor-heading" aria-labelledby="S:6.5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.5 Classifier evaluation: Confusion matrix and Receiver operating characteristics
+        
+        
+      </h2>
+    
+
+<p>A binary classification is a type of classifications that predicts two
+class labels. To evaluate the performance of a binary classification
+model, one approach is to use the performance measures derived from the
+2 × 2 confusion matrix that shows four possible outcomes with
+actual and predicted values (Table
+<a href="#T:6.1">6.1</a>)<a class="citation" href="#Provost1998">[12]</a>. Another approach is to use Receiver operating
+characteristics (ROC) <a class="citation" href="#Swets1988">[13]</a>. The confusion matrix requires only
+outcome labels as True or False, whereas ROC requires both outcome
+labels and discriminant values.</p>
+
+<p><br /></p>
+      <h3 id="T:6.1" class="no_toc text-caption">
+        
+        
+          <a href="#T:6.1" class="anchor-heading" aria-labelledby="T:6.1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 6.1</strong>. Confusion matrix.
+        
+        
+      </h3>
+    
+<p class="fs-2">The table shows four possible outcomes of binary classification.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th>Actual value</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><strong>Positive (P)</strong></td>
+      <td><strong>Negative (N)</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Prediction  outcome</strong></td>
+      <td><strong>Positive</strong></td>
+      <td>True Positive (TP)</td>
+      <td>False Positive (FP)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Negative</strong></td>
+      <td>False Negative (FN)</td>
+      <td>True Negative (TN)</td>
+    </tr>
+  </tbody>
+</table></div><hr />
+
+<p>Standard performance measures that are derived from the confusion matrix
+are Accuracy (ACC), Error rate (ERR), Sensitivity (SN), Specificity
+(SP), Positive predictive value (PPV), and Negative predictive value
+(NPV), and their equations are summarized in Table <a href="#T:6.2">6.2</a>. SN,
+SP, and PPV are also equivalent to True positive rate (TPR), True
+negative rate (TNR), and Precision (PRC), respectively.</p>
+
+<p><br /></p>
+      <h3 id="T:6.2" class="no_toc text-caption">
+        
+        
+          <a href="#T:6.2" class="anchor-heading" aria-labelledby="T:6.2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 6.2</strong>. Performance measures from confusion matrix.
+        
+        
+      </h3>
+    
+<p class="fs-2">The table shows the term and equation of six performance measures from the confusion matrix.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Performance measure</th>
+      <th>Equation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Accuracy (ACC)</td>
+      <td>(TP + TN) / (P + N)</td>
+    </tr>
+    <tr>
+      <td>Error rate (ERR)</td>
+      <td>(FP + FN) / (P + N)</td>
+    </tr>
+    <tr>
+      <td>Sensitivity (SN)</td>
+      <td>TP / P</td>
+    </tr>
+    <tr>
+      <td>Specificity (SP)</td>
+      <td>TN / N</td>
+    </tr>
+    <tr>
+      <td>Positive predictive value (PPV)</td>
+      <td>TP / (TP + FP)</td>
+    </tr>
+    <tr>
+      <td>Negative predictive value (NPV)</td>
+      <td>TN / (TN + FN)</td>
+    </tr>
+  </tbody>
+</table></div><hr />
+
+<p>A ROC graph is a plot that shows False Positive Rate (FPR) or 1 - SP on
+the x axis and TPR on the y axis (Fig. <a href="#F:6.4">6.4</a>). Many
+classifiers produce scores or discriminant values that can be used to
+adjust TPR and FPR. A ROC graph uses these adjusted TPR and FRP to draw
+curves by changing the threshold values of the scores. A single ROC
+point is drawn if a classifier has no such adjustment mechanism. A ROC
+graph contains all information in the confusion metrics, since FN is the
+complement of TP, and TN is the complement of FP <a class="citation" href="#Swets1988">[13]</a>. The area
+under the ROC curve (AUC) is a performance measure to evaluate the ROC
+curves. The AUC indicates a perfect prediction and a random prediction
+when it is 1.0 and 0.5, respectively (Fig. <a href="#F:6.4">6.4</a>A). In many
+cases, the ROC with AUC is a more adequate method to evaluate the
+classifier performance than single-number measures, such as Accuracy
+(ACC) <a class="citation" href="#Huang2005">[14,15]</a>.</p>
+
+<p>It is also important to evaluate the trend of ROC curves. For instance,
+Figure <a href="#F:6.4">6.4</a>B shows two classifiers, Classifier1 and Classifier2, that yield the same
+AUC scores. Classifier1 is a better classifier despite the same AUC
+values, because it has a better early retrieval performance, which means
+it has higher TPR when its SP is also high. The area marked orange in
+Figure <a href="#F:6.4">6.4</a>B is
+the important region to estimate the early retrieval performance. Two
+variants of ROC, ROC<sub>50</sub> <a class="citation" href="#Gribskov1996">[16]</a> and concentrated
+ROC (CROC) <a class="citation" href="#Swamidass2010">[17]</a> are especially useful when measuring the
+early retrieval performance. They are similar to evaluating the ROC
+curves in the high SP area as in Figure <a href="#F:6.4">6.4</a>B, however,
+the AUC values of ROC<sub>50</sub> and CROC can directly indicate the
+early retrieval performance.</p>
+      <h3 id="F:6.4" class="no_toc">
+        
+        
+          <a href="#F:6.4" class="anchor-heading" aria-labelledby="F:6.4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a>  
+        
+        
+      </h3>
+    
+<p><img src="/mitkb/assets/images/thesis/roc-auc-and-early-retrieval.webp" alt="Figure 6.4" width="597" /></p>
+      <h4 class="no_toc text-caption" id="figure-64-roc-curves-and-auc-scores">
+        
+        
+          <a href="#figure-64-roc-curves-and-auc-scores" class="anchor-heading" aria-labelledby="figure-64-roc-curves-and-auc-scores"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Figure 6.4</strong>. ROC curves and AUC scores.
+        
+        
+      </h4>
+    
+<p class="fs-2">The figures show six ROC curves with
+corresponding AUC scores and an example ROC plot with two classifiers.
+<strong>(A)</strong> The best AUC score is 1, and the worst score is 0. The random guess
+would yield the AUC score 0.5, and the predictions are opposite to
+expected when the AUC score is between 0 and 0.5. Six ROC curves have
+different AUC scores between 0.5 and 1.0 to show different prediction
+performances. <strong>(B)</strong> Two classifiers, Classifier1 and Classifier2 have the
+same AUC scores. The orange area in the left part of the plot indicates
+the critical area on evaluating ROC curves in terms of the early
+retrieval performance.</p><hr />
+      <h2 id="S:6.6">
+        
+        
+          <a href="#S:6.6" class="anchor-heading" aria-labelledby="S:6.6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.6 Training and Test data: Single dataset hold-out and k-fold cross validation
+        
+        
+      </h2>
+    
+
+<p>Supervised learning requires a test dataset for performance evaluation.
+A common problem in machine learning is overfitting, where the model
+overfits the training data, and it is generalized poorly to unseen data.
+Therefore, elaborated test procedures are important to maximize the
+performance and avoid overfitting simultaneously. Two major approaches
+to separate the test data set from the training data set are single
+dataset hold-out and k-fold cross validation.</p>
+
+<p>The single dataset hold-out testing is the simplest and most intuitive
+way to make a test dataset. The sample \(S_{n}\) is divided randomly into
+two parts, \(S_{l}\) for training and \(S_{k}\) for testing, where the
+sample size \(n\) is equal to \(l+k\) <a class="citation" href="#Joachims2002">[6]</a>. \(S_{k}\) is treated as
+an independent testset, and it should never be used for training.
+Selecting values of \(l\) and \(k\) is a trade off, because larger \(l\)
+results in smaller bias of the classifier, and smaller \(k\) increases the
+variance for the evaluation <a class="citation" href="#Joachims2002">[6]</a>.</p>
+
+<p>Cross validation is the most popular method because the whole dataset is
+trained and tested. There are several versions of the cross validation
+approach. Leave-one-out is a good performance estimator in many cases,
+but it demands very high computational power and it is also sensitive to
+the data structure. With leave one-out, one data point is removed from
+the training dataset for testing, and the test procedure continues until
+each data point is tested. To reduce the computational time, k-fold
+cross validation is commonly used instead of the leave-one-out approach.
+In k-fold cross validation, the training set is partitioned into k
+folds. One fold from the k folds is used as the test dataset, where the
+remaining dataset with k-1 folds is used for training <a class="citation" href="#Joachims2002">[6]</a>.
+10-fold cross validation with \(k=10\) is widely used for the performance
+evaluations of classifiers.</p>
+
+<p>Analyzing unbalanced datasets is very common in bioinformatics. For
+example, some datasets are dominated by negative records with very few
+positive records, therefore the positive:negative ratio is unbalanced.
+Unbalanced datasets can present a challenge for any machine learning
+algorithm to achieve good performance <a class="citation" href="#Provost2000">[18,19]</a>. SVM can
+deal with unbalanced data by assigning different soft-margin constants
+to each class label <a class="citation" href="#Ben-Hur2008">[20]</a>. However, it is important to consider
+this imbalance when making training and test datasets. One approach to
+solve this imbalance is to use stratification. For example, a stratified
+k-fold cross validation selects k-fold datasets by sampling data from
+each subpopulation (stratum), which is a subset of the data with the
+same class label, independently.</p>
+      <h2 id="S:6.7">
+        
+        
+          <a href="#S:6.7" class="anchor-heading" aria-labelledby="S:6.7"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.7 SVM: Data pre-processing
+        
+        
+      </h2>
+    
+
+<p>It is important to process data before training and testing. Two common
+approaches that may improve the SVM performance are categorical data
+conversion and scaling.</p>
+
+<p>SVM requires numerical feature vectors, therefore, categorical data need
+to be transformed. SVM usually achieves better performance when using
+\(m\) feature vector components to represent an \(m\)-category feature
+instead of a single component <a class="citation" href="#Hsu2003">[21]</a>. For example, a feature for a
+single RNA nucleotide {A,C,G,U} can be represented as (0,0,0,1),
+(0,0,1,0), (0,1,0,0) and (1,0,0,0).</p>
+
+<p>Scaling is very important for various machine learning algorithms
+including SVM <a class="citation" href="#Chang2001">[22]</a>. Two common ways of scaling are linear
+scaling <a class="citation" href="#Hsu2003">[21]</a> and standardizing <a class="citation" href="#Ben-Hur2008">[20]</a>. With the linear
+scaling, all vector components are linearly transferred into the same
+range, for example, [-1, +1] or [0, 1], whereas with the
+standardizing, they are normalized by their mean and standard deviation.</p>
+      <h2 id="S:6.8">
+        
+        
+          <a href="#S:6.8" class="anchor-heading" aria-labelledby="S:6.8"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.8 SVM: Model selection
+        
+        
+      </h2>
+    
+
+<p>The optimization of a classifier is an important phase to maximize the
+classifier performance. A common practice of model selection with SVM is
+to evaluate the classifier performance with different kernels and their
+corresponding parameters. The linear kernel has only one parameter, the
+soft-margin \(C\), but non-linear kernels tend to have more parameters.
+The standard method of parameter optimization with two parameters is via
+grid-search <a class="citation" href="#Ben-Hur2010">[23]</a>. For example, the Gaussian kernel has two
+parameters \((C, \gamma)\), and the grid-search is performed by gradually
+changing the values of both parameters.</p>
+      <h2 id="S:6.9">
+        
+        
+          <a href="#S:6.9" class="anchor-heading" aria-labelledby="S:6.9"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.9 SVM: Multiclass and Regression
+        
+        
+      </h2>
+    
+
+<p>In some cases, classifications involve more than two classes. Although
+some machine learning algorithms are strictly limited to binary
+classification, there are several SVM approaches that can handle
+multi-class problems <a class="citation" href="#Crammer2001">[24]</a>. One example of such SVM multi-class
+approaches is a one-against-the-rest strategy <a class="citation" href="#Joachims2002">[6]</a>. This
+strategy decomposes a multi-class problem into multiple independent
+binary classifications <a class="citation" href="#Crammer2001">[24]</a>.</p>
+
+<p>A version of SVM for regression is called Support Vector Regression
+(SVR) <a class="citation" href="#Smola2003">[8]</a>. The major difference between SVM and SVR is that the
+labels are real numbers for SVR rather than categorical data. The
+optimization problem of SVR is very similar to that of SVM with the
+prime form as:</p>
+
+\[\label{eq_svr_prime}
+\begin{array}{l l}
+\underset{\mathbf{w},b}{\text{minimize}} &amp; \dfrac{1}{2}||\mathbf{w}||^{2}         \\
+\text{subject to}:                       &amp; \left\{
+                                             \begin{array}{l}
+                                               \mathbf{w^{T}x}_{i} + b - y_{i} \leq \varepsilon \\
+                                               y_{i} - \mathbf{w^{T}x}_{i} - b \leq \varepsilon \\
+                                             \end{array}
+                                           \right. ,\\
+\end{array} \tag{6.12}\]
+
+<p>where \(\varepsilon\) is used to control the errors. SVR can
+also be transformed to the dual form and handle soft-margin and kernel
+functions <a class="citation" href="#Smola2003">[8]</a>.</p>
+      <h2 id="S:6.10">
+        
+        
+          <a href="#S:6.10" class="anchor-heading" aria-labelledby="S:6.10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 6.10 Other supervised learning algorithms: Decision tree, Artificial neural network, Naive Bayesian, and \(k\)-nearest neighbor
+        
+        
+      </h2>
+    
+
+<p>Some popular and widely used supervised learning algorithms are Decision
+tree <a class="citation" href="#Murthy1997">[25]</a>, Artificial Neural Network (ANN) <a class="citation" href="#Rumelhart1986">[26]</a>,
+Naive Bayes (NB) <a class="citation" href="#Cestnik1987">[27]</a>, and \(k\)-nearest neighbor (\(k\)-NN)
+<a class="citation" href="#Cover1967">[28]</a>. These four algorithms are often used for comparisons with
+SVM, and they are also introduced as supervised learning algorithms
+together with SVM
+<a class="citation" href="#Caruana2006">[29,10,6,30,2]</a>.</p>
+
+<p>Decision tree learning uses a tree-like hierarchical graph with multiple
+nodes. Three different types of nodes are the root as the first node,
+internal nodes, and the leaves as terminal nodes. A predicted class
+label can be obtained when the decision making process reaches a leaf,
+because each leaf contains a probability distribution over the class
+labels as the results of training <a class="citation" href="#Kingsford2008">[31]</a>. Some learning
+algorithms, such as Random Forests <a class="citation" href="#Statistics2001">[32]</a>, can combine
+multiple decision trees. The Random Forests algorithm makes many
+different decision trees randomly, and it predicts the class labels by
+combing the outputs of these decision trees <a class="citation" href="#Kingsford2008">[31]</a>.</p>
+
+<p>ANN is a machine learning method that is inspired by the structure and
+functionalities of biological neural networks in the brain
+<a class="citation" href="#Kotsiantis2007">[10,33]</a>. The central nervous system (CNS) in the
+brain has interconnected networks of neurons that communicate among each
+other by sending electric pulses through axons, synapses and dendrites.
+ANN consists of nodes, or “neurons”, that are connected together to form
+a network that mimics the network in the CNS. The single layered
+perceptron, which is the simplest form of ANN, is a simple feedforward
+network <a class="citation" href="#Rosenblatt1957">[34]</a>. The single layered perceptron can only solve
+linearly separable problems <a class="citation" href="#Krogh2008">[33]</a>. The multi-layered perceptron
+has been developed to solve non-linear problems <a class="citation" href="#Rumelhart1986">[26]</a>, and it
+has an input layer, an output layer, and one or more hidden layers
+in-between. The multi-layered perceptron with the error back-propagation
+method <a class="citation" href="#Rumelhart1986a">[35]</a>, which is an algorithm that aims at optimizing
+the weight values by minimizing the errors from the output layer to the
+hidden layers, enables fairly complex neural networks to solve
+non-linear problem <a class="citation" href="#Rumelhart1986">[26]</a>.</p>
+
+<p>The NB classifier is a type of statistical learning algorithm. To obtain
+the probability model of a class variable \(C\), NB uses Bayes’ theorem:</p>
+
+\[\label{eq_bayes} p(C|X_{1},...,X{n}) = \dfrac{p(C)p(X_{1},...,X{n}|C)}{p(X_{1},...,X{n})}, \tag{6.13}\]
+
+<p>and it assumes that all feature variables, \(X_{1},...,X{n}\) are
+independent. The numerator of Eq. \eqref{eq_bayes}
+is equivalent to the joint probability model, \(p(C,X_{1},...,X{n})\),
+which can be expressed as \(p(C)\prod_{i=1}^{n}p(X_{i}|C)\) by the
+definition of conditionally probability when \(X_{1},...,X{n}\) are
+independent. Since the denominator of Eq. \eqref{eq_bayes}
+can be considered as constant, the probability model for a classifier is
+\(p(C|X_{1},...,X{n}) \propto p(C)\prod_{i=1}^{n}p(X_{i}|C)\). It is easy
+to calculate the probabilities for the classes from training with this
+model especially when it is log transformed. The assumption of
+independence of feature variables is almost always wrong, therefore NB
+classifiers are usually considered as less accurate <a class="citation" href="#Kotsiantis2007">[10]</a>.
+Nonetheless, despite its naive and over simplified assumptions, NB
+classifiers outperform other sophisticated learning algorithms in some
+cases <a class="citation" href="#Domingos1997">[36,29]</a>.</p>
+
+<p>\(k\)-NN is an instance-based learning algorithm, which delays the
+induction or generalization process until the classification phase
+<a class="citation" href="#Kotsiantis2007">[10]</a>. When a data point needs to be classified, the
+distances of the data point from all the training data points are
+calculated. Subsequently, all the training points are sorted by the
+calculated distance, and the label that is the most frequent in top \(k\)
+points is selected as output <a class="citation" href="#Tarca2007">[2]</a>. \(k\)-NN is very simple, and it
+can use any type of distance metrics, such as Euclidean, Manhattan, and
+Minkowsky <a class="citation" href="#Kotsiantis2007">[10]</a>. However, it is computationally inefficient
+in some cases especially when the data size is large because \(k\)-NN
+requires to calculate the lengths at each time of classification.</p>
+
+<p>Both SVM and ANN tend to perform better on data with multi-dimensions
+and continuous features, but they require large sample size to achieve
+high accuracy. NB works well with relatively small sample size, but it
+requires strong (naive) independence assumptions. Decision tree learning
+performs well with classifying categorical data <a class="citation" href="#Kotsiantis2007">[10]</a>. It is
+usually based on a heuristic algorithm, and it fails to find optimal
+solutions in some cases. \(k\)-NN is very simple to understand and
+interpret, but it is sensitive to irrelevant features <a class="citation" href="#Kotsiantis2007">[10]</a>.</p>
+      <h2 id="S:6.11">
+        
+        
+          <a href="#S:6.11" class="anchor-heading" aria-labelledby="S:6.11"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> References
+        
+        
+      </h2>
+    
+<ol class="bibliography"><li><span id="Pavlidis2004">Pavlidis P, Wapinski I, Noble WS. Support vector machine classification on the web. Bioinformatics 2004;20:586–7. <a href="https://doi.org/10.1093/bioinformatics/btg461">https://doi.org/10.1093/bioinformatics/btg461.</a></span>
+</li>
+<li><span id="Tarca2007">Tarca AL, Carey VJ, Chen X-wen, Romero R, Drăghici S. Machine learning and its applications to biology. PLoS Computational Biology 2007;3:e116. <a href="https://doi.org/10.1371/journal.pcbi.0030116">https://doi.org/10.1371/journal.pcbi.0030116.</a></span>
+</li>
+<li><span id="Boser1992">Boser BE, Guyon IM, Vapnik VN. A training algorithm for optimal margin classifiers. Proceedings of the fifth annual workshop on Computational learning theory - COLT ’92, ACM Press; 1992, p. 144–52. <a href="https://doi.org/10.1145/130385.130401">https://doi.org/10.1145/130385.130401.</a></span>
+</li>
+<li><span id="Vapnik1982">Vapnik VN. Estimation dependences based on empirical data. New York, USA: Springer-Verlag; 1982.</span>
+</li>
+<li><span id="Vapnik1998">Vapnik VN. Statistical learning theory. Wiley, New York; 1998.</span>
+</li>
+<li><span id="Joachims2002">Joachims T. Learning to classify text using support vector machines. Kluwer; 2002.</span>
+</li>
+<li><span id="Burges1998">Burges CJC. A tutorial on support vector machines for pattern recognition. Data Mining and Knowledge Discovery 1998;2:121–67. <a href="https://doi.org/10.1023/a:1009715923555">https://doi.org/10.1023/a:1009715923555.</a></span>
+</li>
+<li><span id="Smola2003">Smola AJ, Schölkopf B. A tutorial on support vector regression. STATISTICS AND COMPUTING; 2003.</span>
+</li>
+<li><span id="Cortes1995">Cortes C, Vapnik V. Support-vector networks. Machine Learning, vol. 20, Springer Science and Business Media LLC; 1995, p. 273–97. <a href="https://doi.org/10.1007/bf00994018">https://doi.org/10.1007/bf00994018.</a></span>
+</li>
+<li><span id="Kotsiantis2007">Kotsiantis SB. Supervised machine learning: a review of classification techniques. Informatica 2007;31:249–68.</span>
+</li>
+<li><span id="Scholkopf2000">Schölkopf B, Smola AJ, Williamson RC, Bartlett PL. New support vector algorithms. Neural Computation 2000;12:1207–45. <a href="https://doi.org/10.1162/089976600300015565">https://doi.org/10.1162/089976600300015565.</a></span>
+</li>
+<li><span id="Provost1998">Provost FJ, Kohavi R. Glossary of terms. on applied research in machine learning. Machine Learning 1998;30:271–4.</span>
+</li>
+<li><span id="Swets1988">Swets J. Measuring the accuracy of diagnostic systems. Science 1988;240:1285–93. <a href="https://doi.org/10.1126/science.3287615">https://doi.org/10.1126/science.3287615.</a></span>
+</li>
+<li><span id="Huang2005">Huang J, Ling CX. Using AUC and accuracy in evaluating learning algorithms. IEEE Transactions on Knowledge and Data Engineering 2005;17:299–310. <a href="https://doi.org/10.1109/tkde.2005.50">https://doi.org/10.1109/tkde.2005.50.</a></span>
+</li>
+<li><span id="Provost1997">Provost FJ, Fawcett T. Analysis and visualization of classifier performance: comparison under imprecise class and cost distributions. Knowledge Discovery and Data Mining, 1997, p. 43–8.</span>
+</li>
+<li><span id="Gribskov1996">Gribskov M, Robinson NL. Use of receiver operating characteristic (ROC) analysis to evaluate sequence matching. Computers &amp; Chemistry 1996;20:25–33. <a href="https://doi.org/10.1016/s0097-8485(96)80004-0">https://doi.org/10.1016/s0097-8485(96)80004-0.</a></span>
+</li>
+<li><span id="Swamidass2010">Swamidass SJ, Azencott C-A, Daily K, Baldi P. A CROC stronger than ROC: measuring, visualizing and optimizing early retrieval. Bioinformatics 2010;26:1348–56. <a href="https://doi.org/10.1093/bioinformatics/btq140">https://doi.org/10.1093/bioinformatics/btq140.</a></span>
+</li>
+<li><span id="Provost2000">Provost F. Machine learning from imbalanced data sets 101. Proceedings of the AAAI-2000 Workshop on Imbalanced Data Sets 2000.</span>
+</li>
+<li><span id="Wu2003">Wu G, Chang EY. Class-boundary alignment for imbalanced dataset learning. In ICML 2003 Workshop on Learning from Imbalanced Data Sets, 2003, p. 49–56.</span>
+</li>
+<li><span id="Ben-Hur2008">Ben-Hur A, Ong CS, Sonnenburg S, Schölkopf B, Rätsch G. Support vector machines and kernels for computational biology. PLoS Computational Biology 2008;4:e1000173. <a href="https://doi.org/10.1371/journal.pcbi.1000173">https://doi.org/10.1371/journal.pcbi.1000173.</a></span>
+</li>
+<li><span id="Hsu2003">Hsu CW, Chang CC, Lin CJ. A practical guide to support vector classification. Taipei, Taiwan: 2003.</span>
+</li>
+<li><span id="Chang2001">Chang C-C, Lin C-J. LIBSVM: A library for support vector machines. ACM Transactions on Intelligent Systems and Technology 2011;2:1–27. <a href="https://doi.org/10.1145/1961189.1961199">https://doi.org/10.1145/1961189.1961199.</a></span>
+</li>
+<li><span id="Ben-Hur2010">Ben-Hur A, Weston J. A user’s guide to support vector machines. Methods in Molecular Biology, vol. 609, Humana Press; 2009, p. 223–39. <a href="https://doi.org/10.1007/978-1-60327-241-4_13">https://doi.org/10.1007/978-1-60327-241-4_13.</a></span>
+</li>
+<li><span id="Crammer2001">Crammer K, Singer Y. On the algorithmic implementation of multiclass kernel-based vector machines. Journal of Machine Learning Research 2001;2:265–92.</span>
+</li>
+<li><span id="Murthy1997">Murthy SK. Automatic construction of decision trees from data: a multi-disciplinary survey. Data Mining and Knowledge Discovery 1998;2:345–89. <a href="https://doi.org/10.1023/a:1009744630224">https://doi.org/10.1023/a:1009744630224.</a></span>
+</li>
+<li><span id="Rumelhart1986">Rumelhart DE, Hinton GE, Williams RJ. Learning internal representations by error propagation. Cambridge, MA, USA: MIT Press; 1986.</span>
+</li>
+<li><span id="Cestnik1987">Cestnik B, Kononenko I, Bratko I. ASSISTANT 86: A knowledge-elicitation tool for sophisticated users. In: Bratko I, Lavrac N, editors. European Conference on Machine Learning (ECML), Sigma Press, Wilmslow; 1987, p. 31–45.</span>
+</li>
+<li><span id="Cover1967">Cover T, Hart P. Nearest neighbor pattern classification. IEEE Transactions on Information Theory 1967;13:21–7. <a href="https://doi.org/10.1109/tit.1967.1053964">https://doi.org/10.1109/tit.1967.1053964.</a></span>
+</li>
+<li><span id="Caruana2006">Caruana R, Niculescu-Mizil A. An empirical comparison of supervised learning algorithms. Proceedings of the 23rd international conference on Machine learning - ICML ’06, ACM Press; 2006, p. 161–8. <a href="https://doi.org/10.1145/1143844.1143865">https://doi.org/10.1145/1143844.1143865.</a></span>
+</li>
+<li><span id="Yan2007">Yan X, Chao T, Tu K, Zhang Y, Xie L, Gong Y, et al. Improving the prediction of human microRNA target genes by using ensemble algorithm. FEBS Letters 2007;581:1587–93. <a href="https://doi.org/10.1016/j.febslet.2007.03.022">https://doi.org/10.1016/j.febslet.2007.03.022.</a></span>
+</li>
+<li><span id="Kingsford2008">Kingsford C, Salzberg SL. What are decision trees? Nature Biotechnology 2008;26:1011–3. <a href="https://doi.org/10.1038/nbt0908-1011">https://doi.org/10.1038/nbt0908-1011.</a></span>
+</li>
+<li><span id="Statistics2001">Breiman L. Random forests. Machine Learning, vol. 45, Springer Science and Business Media LLC; 2001, p. 5–32. <a href="https://doi.org/10.1023/a:1010933404324">https://doi.org/10.1023/a:1010933404324.</a></span>
+</li>
+<li><span id="Krogh2008">Krogh A. What are artificial neural networks? Nature Biotechnology 2008;26:195–7. <a href="https://doi.org/10.1038/nbt1386">https://doi.org/10.1038/nbt1386.</a></span>
+</li>
+<li><span id="Rosenblatt1957">Rosenblatt F. The perceptron: a perceiving and recognizing automaton (Project Para). Cornell Aeronautical Laboratory; 1957.</span>
+</li>
+<li><span id="Rumelhart1986a">Rumelhart DE, Hinton GE, Williams RJ. Learning representations by back-propagating errors. Nature 1986;323:533–6. <a href="https://doi.org/10.1038/323533a0">https://doi.org/10.1038/323533a0.</a></span>
+</li>
+<li><span id="Domingos1997">Domingos P, Pazzani M. On the optimality of the simple bayesian classifier under zero-one loss. Machine Learning 1997;29:103–30. <a href="https://doi.org/10.1023/a:1007413511361">https://doi.org/10.1023/a:1007413511361.</a></span>
+</li></ol>
+
+        
+
+        
+
+        
+          <hr>
+          <h2>Leave a comment</h2>
+          <div id="disqus_thread"></div>
+        
+
+        
+        
+          <hr>
+          <footer>
+            
+              <p><a href="#top" id="back-to-top">Back to top</a></p>
+            
+
+            <p class="text-small text-grey-dk-100 mb-0">Copyright &copy; 2021 Takaya Saito.</p>
+
+            
+              <div class="d-flex mt-2">
+                
+                
+              </div>
+            
+          </footer>
+        
+
+      </div>
+    </div>
+
+    
+      
+
+      <div class="search-overlay"></div>
+    
+  </div>
+
+  
+     <script>addBackToTop({
+       id: 'back-to-top-js-button'
+     })</script>
+  
+
+  
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mitkb.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</body>
+</html>
+

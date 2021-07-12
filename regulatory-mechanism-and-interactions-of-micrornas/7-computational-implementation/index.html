@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/mitkb/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/mitkb/assets/css/just-the-docs-default.css">
+
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-84ETYTKDBN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-84ETYTKDBN', { 'anonymize_ip': true });
+    </script>
+
+  
+
+  
+    <script type="text/javascript" src="/mitkb/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="/mitkb/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>7 Implementation | mitkb</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="7 Implementation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Computational implementation" />
+<meta property="og:description" content="Computational implementation" />
+<link rel="canonical" href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/7-computational-implementation/" />
+<meta property="og:url" content="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/7-computational-implementation/" />
+<meta property="og:site_name" content="mitkb" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="7 Implementation" />
+<script type="application/ld+json">
+{"description":"Computational implementation","url":"https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/7-computational-implementation/","@type":"WebPage","headline":"7 Implementation","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ncrnas.github.io/mitkb/assets/images/logo.png"}},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+<meta name="google-site-verification" content="vstkqjcoJe9vQcOOpsCKrxv6WfqZ2SKRNWSv7XoHFeQ" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/mitkb/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/mitkb/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/mitkb/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/mitkb/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/mitkb/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+<!-- for mathjax support -->
+
+
+
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
+
+<script
+  data-cookie-notice='{ "learnMoreLinkEnabled": true, "learnMoreLinkHref": "/mitkb/terms/" }'
+  src="https://unpkg.com/cookie-notice@^1/dist/cookie.notice.min.js"
+></script>
+
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://ncrnas.github.io/mitkb/" class="site-title lh-tight">
+  <div class="site-logo"></div>
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/" class="nav-list-link">Home</a></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/" class="nav-list-link">Overview</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/0-front-matter/" class="nav-list-link">0 Front matter</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/1-introduction/" class="nav-list-link">1 Introduction</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/2-papers-and-their-corresponding-sub-goals/" class="nav-list-link">2 Papers and sub-goals</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/3-micrornas-and-other-non-coding-rnas/" class="nav-list-link">3 miRNAs and ncRNAs</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/4-high-throughput-biological-experiments/" class="nav-list-link">4 Biological experiments</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/5-statistical-tests-and-methods/" class="nav-list-link">5 Statistical methods</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/6-machine-learning-theory-and-support-vector-machine/" class="nav-list-link">6 Support vector machine</a></li><li class="nav-list-item  active"><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/7-computational-implementation/" class="nav-list-link active">7 Implementation</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/8-future-perspectives/" class="nav-list-link">8 Future perspectives</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/" class="nav-list-link">Target prediction</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/micrornas-targeting-and-target-prediction/" class="nav-list-link">Review: miRNA target</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/two-step-svm-model/" class="nav-list-link">Research: Two-step SVM</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-target-prediction/two-step-svm-model-supplementary-information/" class="nav-list-link">Supplementary information</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/" class="nav-list-link">Biological experiments</a><ul class="nav-list "><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments/" class="nav-list-link">Research: Confounding</a></li><li class="nav-list-item "><a href="https://ncrnas.github.io/mitkb/mirna-high-throughput-experiments/confounding-factors-in-mirna-experiments-supplementary-information/" class="nav-list-link">Supplementary information</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://ncrnas.github.io/mitkb/mirna-and-other-ncrnas/" class="nav-list-link">Other ncRNAs</a><ul class="nav-list "></ul></li><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/support-articles/" class="nav-list-link">Support articles</a></li><li class="nav-list-item"><a href="https://ncrnas.github.io/mitkb/contact" class="nav-list-link">Contact us</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      <a href="https://ncrnas.github.io/mitkb/terms">Terms and Privacy Policy</a> <br /><br />
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search mitkb" aria-label="Search mitkb" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      
+      
+      
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+            
+              <li class="aux-nav-list-item">
+                <a href="https://github.com/ncrnas/mitkb" class="site-button"
+                  
+                >
+                  mitkb on github
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://ncrnas.github.io/mitkb/regulatory-mechanism-and-interactions-of-micrornas/">Overview</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>7 Implementation</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h1 class="no_toc" id="7-computational-implementation">
+        
+        
+          <a href="#7-computational-implementation" class="anchor-heading" aria-labelledby="7-computational-implementation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 7 Computational implementation
+        
+        
+      </h1>
+    <hr />
+
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#S:7.1" id="markdown-toc-S:7.1">7.1 Software development methodologies: Rapid application development and Test-driven development</a></li>
+  <li><a href="#S:7.2" id="markdown-toc-S:7.2">7.2 Programming languages: Object-oriented programming and Python</a></li>
+  <li><a href="#S:7.3" id="markdown-toc-S:7.3">7.3 Statistical programming languages: R and other statistical computing languages</a></li>
+  <li><a href="#S:7.4" id="markdown-toc-S:7.4">7.4 Data storage: Text files and MySQL</a></li>
+  <li><a href="#S:7.5" id="markdown-toc-S:7.5">References</a></li>
+</ol>
+
+</details><hr />
+
+<p>This chapter gives an overview of the computational implementation
+approaches used in our research. We mainly used Python for general
+programming, and R for statistical programming and analysis. This
+chapter also briefly gives additional information about software
+development methodologies and data storage.</p>
+      <h2 id="S:7.1">
+        
+        
+          <a href="#S:7.1" class="anchor-heading" aria-labelledby="S:7.1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 7.1 Software development methodologies: Rapid application development and Test-driven development
+        
+        
+      </h2>
+    
+
+<p>Many conventional software development methodologies, such as variants
+of the waterfall method <a class="citation" href="#Royce1970">[1]</a>, require strict documentation at
+the design phase, and full implementation rather than prototyping in the
+implementation phase. A waterfall method is a sequential design process
+flowing steadily downwards through the phases of the software
+development life cycle. These strict and non-flexible software
+development phases of conventional methodologies led to many failed
+system development projects in the 1980s and early 1990s, especially in
+large-scale projects. Rapid application development (RAD) <a class="citation" href="#Martin1991">[2]</a>
+is a relatively new software development methodology, which aims to
+decrease the complexity of implementation and increase the speed of
+application development. There are many types of RADs, such as Scrum
+<a class="citation" href="#Rising2000">[3]</a>, Agile software development (Agile) <a class="citation" href="#Cockburn2001">[4]</a>, and
+Extreme Programming (XP) <a class="citation" href="#Auer2001">[5]</a>. Most of them focus on simplifying
+each phase and reducing the duration of the software development cycle.
+One of the most suitable RADs for small or mid-size bioinformatics
+projects is Test-driven development (TDD) <a class="citation" href="#Beck2002">[6]</a>, which is
+equivalent to the test-first programming concepts of XP. TDD enforces
+the creation of unit tests before actual coding. Although full
+compliance to TDD is not necessary, making as many unit tests as
+possible with mock data can ensure high reliability of the application.</p>
+      <h2 id="S:7.2">
+        
+        
+          <a href="#S:7.2" class="anchor-heading" aria-labelledby="S:7.2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 7.2 Programming languages: Object-oriented programming and Python
+        
+        
+      </h2>
+    
+
+<p>The most popular programming paradigm today is object-oriented
+programming (OOP). OOP uses “objects” defined by corresponding
+“classes”. Objects are actual data with data structure and procedures,
+whereas classes are definitions or templates to make objects. Many
+programming languages currently support full or partial OOP, and some of
+the popular ones are C++, Java, Perl, and Python. All of these
+programming languages are freely available (Table <a href="#T:7.1">7.1</a>),
+and they are widely used in bioinformatics analysis.
+Table <a href="#T:7.1">7.1</a> also shows two additional languages Haskell
+and Go, as examples of functional programming and concurrent programming
+paradigms, though these paradigms are less common than OOP in general.</p>
+
+<p><br /></p>
+      <h3 id="T:7.1" class="no_toc text-caption">
+        
+        
+          <a href="#T:7.1" class="anchor-heading" aria-labelledby="T:7.1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 7.1</strong>. Programming languages.
+        
+        
+      </h3>
+    
+<p class="fs-2">The table shows a list of freely
+available programming languages. “program”, “type”, and “URL for
+software environment” represent the name of programming language, the
+name of programming paradigm, and the URL for downloading software
+environment, respectively. OOP, Func, Conc in the “type” column
+represents three different programming paradigms: object-oriented,
+functional, and concurrent programming, respectively.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Program</th>
+      <th>Type</th>
+      <th>URL for software environment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C++ (GNU)</td>
+      <td>OOP</td>
+      <td><a href="https://gcc.gnu.org">https://gcc.gnu.org</a></td>
+    </tr>
+    <tr>
+      <td>Java (Oracle)</td>
+      <td>OOP</td>
+      <td><a href="https://www.oracle.com/technetwork/java">https://www.oracle.com/technetwork/java</a></td>
+    </tr>
+    <tr>
+      <td>Perl</td>
+      <td>OOP</td>
+      <td><a href="https://www.perl.org">https://www.perl.org</a></td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>OOP</td>
+      <td><a href="https://www.python.org">https://www.python.org</a></td>
+    </tr>
+    <tr>
+      <td>Haskell</td>
+      <td>Func</td>
+      <td><a href="https://www.haskell.org">https://www.haskell.org</a></td>
+    </tr>
+    <tr>
+      <td>Go</td>
+      <td>Conc</td>
+      <td><a href="https://golang.org">https://golang.org</a></td>
+    </tr>
+  </tbody>
+</table></div><hr />
+
+<p>Among them, Python has emerged as one of the most popular languages in
+bioinformatics. Python requires no static type checking, which enhances
+the productivity with the RAD approach. It also offers multiple
+programming paradigms, therefore, it can use both object-oriented and
+functional programming in the same module, for instance. Moreover,
+Python offers two very powerful libraries for scientific computing:
+NumPy (<a href="https://numpy.org/">https://numpy.org/</a>) and SciPy (<a href="https://www.scipy.org/">https://www.scipy.org/</a>).
+BioPython (<a href="https://biopython.org">https://biopython.org</a>) provides a set of libraries for
+biological computation to Python. A machine learning package for Python
+called PyML provides useful functions to build and test a SVM model
+<a class="citation" href="#Ben-Hur2008">[7]</a>. We mainly used PyML to build our two-step SVM model for
+miRNA target prediction.</p>
+      <h2 id="S:7.3">
+        
+        
+          <a href="#S:7.3" class="anchor-heading" aria-labelledby="S:7.3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 7.3 Statistical programming languages: R and other statistical computing languages
+        
+        
+      </h2>
+    
+
+<p>Some programming languages are specialized for statistical computing and
+graphics. For instance, SAS, SPSS, STATA, and R support software
+environments for statistical computing, whereas MATLAB and Mathematica
+are languages that provide statistical features. Among them, only R is
+open source software and freely available (Table <a href="#T:7.2">7.2</a>).
+Moreover, R provides many additional
+libraries and also a comprehensive framework for high-throughput genome
+data analysis, called Bioconductor (<a href="https://www.bioconductor.org">https://www.bioconductor.org</a>),
+hence, it is the most popular statistical computing language for
+bioinformatics today.</p>
+
+<p><br /></p>
+      <h3 id="T:7.2" class="no_toc text-caption">
+        
+        
+          <a href="#T:7.2" class="anchor-heading" aria-labelledby="T:7.2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 7.2</strong>. Programming languages for statistical analysis.
+        
+        
+      </h3>
+    
+<p class="fs-2">The table shows
+a list of programming languages that can be used for statistical
+analysis. “program”, license”, and “URL” represent the name of
+programming language, the type of license, and the URL for
+organizations or institutes that provide the software, respectively.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Program</th>
+      <th>License</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SAS</td>
+      <td>proprietary</td>
+      <td><a href="https://www.sas.com">https://www.sas.com</a></td>
+    </tr>
+    <tr>
+      <td>SPSS</td>
+      <td>proprietary</td>
+      <td><a href="https://www.ibm.com/analytics/spss-statistics-software">https://www.ibm.com/analytics/spss-statistics-software</a></td>
+    </tr>
+    <tr>
+      <td>STATA</td>
+      <td>proprietary</td>
+      <td><a href="https://www.stata.com">https://www.stata.com</a></td>
+    </tr>
+    <tr>
+      <td>R</td>
+      <td>open source</td>
+      <td><a href="https://www.r-project.org">https://www.r-project.org</a></td>
+    </tr>
+    <tr>
+      <td>MATLAB</td>
+      <td>proprietary</td>
+      <td><a href="https://www.mathworks.com/products/matlab">https://www.mathworks.com/products/matlab</a></td>
+    </tr>
+    <tr>
+      <td>Mathematica</td>
+      <td>proprietary</td>
+      <td><a href="https://www.wolfram.com/mathematica">https://www.wolfram.com/mathematica</a></td>
+    </tr>
+  </tbody>
+</table></div><hr />
+      <h2 id="S:7.4">
+        
+        
+          <a href="#S:7.4" class="anchor-heading" aria-labelledby="S:7.4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 7.4 Data storage: Text files and MySQL
+        
+        
+      </h2>
+    
+
+<p>Handling the large size data from experiments with high-throughput
+technologies usually requires a method for effective data retrieval and
+manipulation. The easiest approach is using a text file with
+user-defined or pre-defined format. Some examples of popular pre-defined
+formats in bioinformatics are FASTA for nucleotide and peptide
+sequences, GFF (general feature format) for positional information with
+additional features in genome, and MAF (multiple alignment format) for
+multiple alignments.</p>
+
+<p>A relational database (RDB) <a class="citation" href="#Codd1970">[8]</a> management system offers more
+elaborate data storage mechanisms than simple text files. In RDB, data
+are usually accessed through the structured query language (SQL), and
+all data are stored in multiple tables. MySQL is the most popular freely
+available RDB used by bioinformatics projects, but other free RDBs, such
+as PostgreSQL or Postgres, and SQLite, are also widely used (Table <a href="#T:7.3">7.3</a>).</p>
+
+<p><br /></p>
+      <h3 id="T:7.3" class="no_toc text-caption">
+        
+        
+          <a href="#T:7.3" class="anchor-heading" aria-labelledby="T:7.3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Table 7.3</strong>. Relational databases.
+        
+        
+      </h3>
+    
+<p class="fs-2">The table shows a list of relational and NoSQL databases.
+<sup>1</sup>PostgreSQL Global Development Group.
+<sup>2</sup>SQLite Consortium.
+<sup>3</sup>Google App Engine provides BigTable accessibility.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Provider</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MySQL</td>
+      <td>RDB</td>
+      <td>Oracle</td>
+      <td><a href="https://www.mysql.com">https://www.mysql.com</a></td>
+    </tr>
+    <tr>
+      <td>PostgreSQL</td>
+      <td>RDB</td>
+      <td>PGDG<sup>1</sup></td>
+      <td><a href="https://www.postgresql.org">https://www.postgresql.org</a></td>
+    </tr>
+    <tr>
+      <td>SQLite</td>
+      <td>RDB</td>
+      <td>SQLite Cons<sup>2</sup></td>
+      <td><a href="https://www.sqlite.org">https://www.sqlite.org</a></td>
+    </tr>
+    <tr>
+      <td>MongoDB</td>
+      <td>NoSQL</td>
+      <td>10gen</td>
+      <td><a href="https://www.mongodb.org">https://www.mongodb.org</a></td>
+    </tr>
+    <tr>
+      <td>BigTable</td>
+      <td>NoSQL</td>
+      <td>Google</td>
+      <td><a href="https://cloud.google.com/appengine">https://cloud.google.com/appengine</a><sup>3</sup></td>
+    </tr>
+    <tr>
+      <td>SimpleDB</td>
+      <td>NoSQL</td>
+      <td>Amazon</td>
+      <td><a href="https://aws.amazon.com/simpledb">https://aws.amazon.com/simpledb</a></td>
+    </tr>
+  </tbody>
+</table></div><hr />
+
+<p>In RDB, the data in multiple tables are “joined” when retrieving them
+together. All RDB management systems have very poor performance with
+joining tables at tera- or peta- byte level. Therefore, NoSQL database
+management systems have emerged to control data even at peta byte level.
+NoSQL usually avoids SQL usage and relational tables. Many NoSQL systems
+are available today, and some popular NoSQLs are MongoDB, Google
+BigTable <a class="citation" href="#Chang2006">[9]</a>, and Amazon SimpleDB (Table <a href="#T:7.3">7.3</a>).</p>
+
+<p>Even though handling data at tera byte level is important as more
+sequence data from the next generation sequencing become available, many
+programming languages currently lack easy-to-use libraries to access
+NoSQL management systems. Therefore, using both text files and RDBs
+rather than NoSQL is still a major practice in bioinformatics.</p>
+      <h2 id="S:7.5">
+        
+        
+          <a href="#S:7.5" class="anchor-heading" aria-labelledby="S:7.5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> References
+        
+        
+      </h2>
+    
+<ol class="bibliography"><li><span id="Royce1970">Royce WW, Royce WW. Managing the development of large software systems. Technical Papers of Western Electronic Show and Convention, 1970, p. 1–9.</span>
+</li>
+<li><span id="Martin1991">Martin J. Rapid application development. Pearson Higher Education; 1991.</span>
+</li>
+<li><span id="Rising2000">Rising L, Janoff NS. The Scrum software development process for small teams. IEEE Software 2000;17:26–32. <a href="https://doi.org/10.1109/52.854065">https://doi.org/10.1109/52.854065.</a></span>
+</li>
+<li><span id="Cockburn2001">Cockburn A, Highsmith J. Agile software development, the people factor. Computer 2001;34:131–3. <a href="https://doi.org/10.1109/2.963450">https://doi.org/10.1109/2.963450.</a></span>
+</li>
+<li><span id="Auer2001">Auer K, Miller R. Extreme programming applied: playing to win. Addison-Wesley Professional; 2001.</span>
+</li>
+<li><span id="Beck2002">Beck K. Test driven development: by example. Addison-Wesley Professional; 2002.</span>
+</li>
+<li><span id="Ben-Hur2008">Ben-Hur A, Ong CS, Sonnenburg S, Schölkopf B, Rätsch G. Support vector machines and kernels for computational biology. PLoS Computational Biology 2008;4:e1000173. <a href="https://doi.org/10.1371/journal.pcbi.1000173">https://doi.org/10.1371/journal.pcbi.1000173.</a></span>
+</li>
+<li><span id="Codd1970">Codd EF. A relational model of data for large shared data banks. Communications of the ACM 1970;13:377–87. <a href="https://doi.org/10.1145/362384.362685">https://doi.org/10.1145/362384.362685.</a></span>
+</li>
+<li><span id="Chang2006">Chang F, Dean J, Ghemawat S, Hsieh WC, Wallach DA, Burrows M, et al. Bigtable: A distributed storage system for structured data. ACM Transactions on Computer Systems 2008;26:1–26. <a href="https://doi.org/10.1145/1365815.1365816">https://doi.org/10.1145/1365815.1365816.</a></span>
+</li></ol>
+
+        
+
+        
+
+        
+          <hr>
+          <h2>Leave a comment</h2>
+          <div id="disqus_thread"></div>
+        
+
+        
+        
+          <hr>
+          <footer>
+            
+              <p><a href="#top" id="back-to-top">Back to top</a></p>
+            
+
+            <p class="text-small text-grey-dk-100 mb-0">Copyright &copy; 2021 Takaya Saito.</p>
+
+            
+              <div class="d-flex mt-2">
+                
+                
+              </div>
+            
+          </footer>
+        
+
+      </div>
+    </div>
+
+    
+      
+
+      <div class="search-overlay"></div>
+    
+  </div>
+
+  
+     <script>addBackToTop({
+       id: 'back-to-top-js-button'
+     })</script>
+  
+
+  
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mitkb.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</body>
+</html>
+
