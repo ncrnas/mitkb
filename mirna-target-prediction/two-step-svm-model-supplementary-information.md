@@ -3,6 +3,7 @@ layout: default
 title: "Supplementary information"
 parent: Target prediction
 description: "Supplementary information: A two-step site and mRNA-level model for predicting microRNA targets"
+comments: true
 nav_order: 3
 group: two-step-svm
 folders:

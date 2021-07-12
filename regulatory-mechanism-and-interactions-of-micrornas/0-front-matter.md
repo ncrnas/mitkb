@@ -4,6 +4,7 @@ title: 0 Front matter
 parent: Overview
 nav_order: 1
 description: "Front matter"
+comments: true
 folders:
   thesis: regulatory-mechanism-and-interactions-of-micrornas
   prediction: mirna-target-prediction

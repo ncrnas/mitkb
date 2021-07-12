@@ -5,6 +5,7 @@ nav_order: 6
 description: "microRNAs and other non-coding RNAs"
 has_children: true
 has_toc: false
+comments: true
 ---
 
 # microRNAs and other non-coding RNAs

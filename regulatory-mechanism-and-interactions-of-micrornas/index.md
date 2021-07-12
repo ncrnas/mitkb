@@ -4,6 +4,7 @@ title: Overview
 nav_order: 3
 description: "Computational analysis of regulatory mechanism and interactions of microRNAs"
 has_children: true
+comments: true
 ---
 
 # Computational analysis of regulatory mechanism and interactions of microRNAs

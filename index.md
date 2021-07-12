@@ -4,6 +4,7 @@ title: Home
 nav_order: 1
 description: "mitkb: A knowledge base of miRNA targeting"
 permalink: /
+comments: true
 folders:
   basicinfo: basic-information
   thesis: regulatory-mechanism-and-interactions-of-micrornas

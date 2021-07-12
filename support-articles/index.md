@@ -5,6 +5,7 @@ nav_order: 7
 description: "Support articles"
 has_children: false
 search_exclude: true
+comments: true
 ---
 
 # Support articles
