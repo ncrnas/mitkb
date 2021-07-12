@@ -4,6 +4,7 @@ title: 4 Biological experiments
 parent: Overview
 nav_order: 5
 description: "High-throughput biological experiments"
+comments: true
 group: thesis
 folders:
   experiment: mirna-high-throughput-experiments

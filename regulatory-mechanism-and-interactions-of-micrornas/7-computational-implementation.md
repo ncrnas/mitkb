@@ -4,6 +4,7 @@ title: 7 Implementation
 parent: Overview
 nav_order: 8
 description: "Computational implementation"
+comments: true
 scholar:
   bibliography: thesis_7
 ---

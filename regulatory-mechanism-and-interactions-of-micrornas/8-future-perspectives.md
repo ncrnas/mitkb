@@ -4,6 +4,7 @@ title: 8 Future perspectives
 parent: Overview
 nav_order: 9
 description: "Future perspectives"
+comments: true
 folders:
   prediction: mirna-target-prediction
   experiment: mirna-high-throughput-experiments

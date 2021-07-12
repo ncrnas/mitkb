@@ -4,6 +4,7 @@ title: 3 miRNAs and ncRNAs
 parent: Overview
 nav_order: 4
 description: "MicroRNAs and other non-coding RNAs"
+comments: true
 group: thesis
 folders:
   ncrna: mirna-and-other-ncrnas

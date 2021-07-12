@@ -5,6 +5,7 @@ parent: Overview
 nav_order: 7
 usemathjax: true
 description: "Machine learning theory and Support vector machine"
+comments: true
 group: thesis
 folders:
   prediction: mirna-target-prediction

@@ -4,6 +4,7 @@ title: 2 Papers and sub-goals
 parent: Overview
 nav_order: 3
 description: "Papers and their corresponding sub-goals"
+comments: true
 folders:
   prediction: mirna-target-prediction
   experiment: mirna-high-throughput-experiments

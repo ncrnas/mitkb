@@ -3,6 +3,7 @@ layout: default
 title: "Review: miRNA target"
 parent: Target prediction
 description: "MicroRNAs: targeting and target prediction"
+comments: true
 nav_order: 1
 group: review
 tabs:

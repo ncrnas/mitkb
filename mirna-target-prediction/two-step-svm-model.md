@@ -3,6 +3,7 @@ layout: default
 title: "Research: Two-step SVM"
 parent: Target prediction
 description: "A two-step site and mRNA-level model for predicting microRNA targets"
+comments: true
 nav_order: 2
 group: two-step-svm
 folders:

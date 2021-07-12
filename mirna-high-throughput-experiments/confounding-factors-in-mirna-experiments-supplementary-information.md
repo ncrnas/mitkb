@@ -3,6 +3,7 @@ layout: default
 title: "Supplementary information"
 parent: Biological experiments
 description: "Supplementary information: ﻿﻿Target gene expression levels and competition between transfected and endogenous microRNAs are strong confounding factors in microRNA high-throughput experiments"
+comments: true
 nav_order: 3
 group: confounding
 tabs:

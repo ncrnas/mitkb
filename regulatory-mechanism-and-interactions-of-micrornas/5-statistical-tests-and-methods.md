@@ -5,6 +5,7 @@ parent: Overview
 nav_order: 6
 usemathjax: true
 description: "Statistical tests and methods"
+comments: true
 group: thesis
 folders:
   experiment: mirna-high-throughput-experiments
