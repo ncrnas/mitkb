@@ -22,12 +22,11 @@ Takaya Saito
 
 doi: [10.5281/zenodo.4902327](https://doi.org/10.5281/zenodo.4902327)
 
-## Search engine indexing
+## Search engine index
 Our sitemap.xml is registered with search engines by using the following tools.
 
 - [Google Search Console](https://search.google.com/search-console/)
 - [Bing Webmaster Tools](https://www.bing.com/webmasters/)
-- [Yandex.Webmaster](https://webmaster.yandex.com)
 
 ## Licence
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. <br /><br />
